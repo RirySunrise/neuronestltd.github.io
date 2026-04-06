@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Therapists &mdash; Neuronest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #00A896; --teal-dk: #008F7E;
+      --coral: #E8603A; --coral-dk: #CC4F2B;
+      --sun: #F4C430; --navy: #1A2E4A;
+      --mid: #4A5A6A; --light: #8A9AB0;
+      --white: #FFFFFF; --offwhite: #F5F9F8; --sun-bg: #FEF8E1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
+    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
+    .top-bar a { color: white; font-weight: 600; text-decoration: none; }
+    .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
+    .header-logo { padding-bottom: 0.5rem; }
+    .header-logo img { height: 100px; display: block; }
+    .header-right { padding-bottom: 1rem; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+    .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 0.45rem 1.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
+    .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
+    .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
+    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+    .btn-coral { background: var(--coral); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-coral:hover { background: var(--coral-dk); transform: translateY(-2px); }
+    .btn-teal { background: var(--teal); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-teal:hover { background: var(--teal-dk); transform: translateY(-2px); }
+    .btn-wh { background: white; color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-wh-outline { background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
+    .page-hero { height: 48vh; min-height: 300px; position: relative; overflow: hidden; }
+    .page-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,46,74,0.25), rgba(26,46,74,0.68)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .pg-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 0.8rem; }
+    .page-hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; color: white; line-height: 1.15; max-width: 640px; margin-bottom: 0.8rem; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 480px; line-height: 1.7; font-weight: 300; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; text-decoration: none; }
+    .f-logo span { color: var(--sun); }
+    .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a:hover { color: white; }
+    .f-copy { font-size: 0.78rem; }
+    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 80px; } }
+    @media (max-width: 600px) { .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
+
+    .t-content { max-width: 900px; margin: 0 auto; padding: 5rem 6vw; }
+    .t-content p { font-size: 1rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-bottom: 1.5rem; }
+    .t-content p strong { color: var(--navy); font-weight: 600; }
+    .t-h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.3rem,2.5vw,1.8rem); font-weight: 900; color: var(--navy); margin: 3rem 0 1rem; line-height: 1.25; }
+    .model-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0 3rem; }
+    .model-card { background: var(--offwhite); border-radius: 18px; padding: 1.8rem; border-top: 3px solid var(--teal); }
+    .model-card:nth-child(even) { border-top-color: var(--coral); }
+    .model-card h3 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
+    .model-card p { font-size: 0.85rem; line-height: 1.65; color: var(--mid); margin: 0; }
+    .pull-block { background: var(--navy); border-radius: 20px; padding: 2.5rem 3rem; margin: 3rem 0; }
+    .pull-block p { font-family: 'Nunito', sans-serif; font-size: 1.15rem; font-weight: 800; color: white; line-height: 1.6; margin: 0; }
+    .pull-block p em { color: var(--sun); font-style: normal; }
+    .contact-band { background: var(--teal); padding: 4rem 6vw; text-align: center; }
+    .contact-band h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 900; color: white; margin-bottom: 1rem; line-height: 1.2; }
+    .contact-band p { font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 700px) { .model-cards { grid-template-columns: 1fr; } .pull-block { padding: 2rem; } }
+  </style>
+</head>
+<body>
+<div class="top-bar">
+  <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 8PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
+</div>
+<div class="site-header">
+  <div class="header-logo"><a href="index.html"><img src="https://neuronestltd.com/wp-content/uploads/2025/11/Final-Logo-1024x791.png" alt="Neuronest" /></a></div>
+  <div class="header-right">
+    <div class="header-tagline">Embracing Every Mind!</div>
+    <ul class="nav-pills">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="open-play.html">Open Play</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="space.html">The Space</a></li>
+      <li><a href="therapists.html" class="active">For Therapists</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#find-us">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-hero">
+  <img src="img_therapy_room.jpeg" alt="Therapy suite at Neuronest" />
+  <div class="page-hero-overlay">
+    <div class="pg-eyebrow">For Therapists</div>
+    <h1>A space built for the work you do</h1>
+    <p>Neuronest offers fully equipped therapy suites available to independent practitioners working with neurodivergent children.</p>
+  </div>
+</div>
+
+<div class="t-content">
+  <span class="sec-label">The Model</span>
+  <div class="sec-title" style="margin-bottom:1.5rem;">How it works</div>
+  <p>Neuronest is not just a play facility. It is a combined play and therapy space, and the therapy component only works because of the independent practitioners who bring their expertise here. We provide the space, the environment, and the families. You bring the clinical skill.</p>
+  <p>Our therapy suites are available for rent to independent qualified practitioners. You work with your own clients, on your own schedule, at your own rates. We handle the facility — the rooms, the equipment, the environment — so you can focus entirely on your work with the child.</p>
+
+  <div class="pull-block">
+    <p>Families come to Neuronest for play. When therapy is available in the same building, <em>they do not have to choose.</em> That makes your services more accessible and more likely to be used consistently.</p>
+  </div>
+
+  <p class="t-h2">Why Neuronest works for practitioners</p>
+  <div class="model-cards">
+    <div class="model-card">
+      <h3>Fully equipped rooms</h3>
+      <p>Our therapy suites are set up and ready to use. You are not bringing everything yourself or working in a converted space.</p>
+    </div>
+    <div class="model-card">
+      <h3>Built-in client referrals</h3>
+      <p>Families visiting Neuronest for play are already engaged with their child's development. Many are actively looking for therapy support.</p>
+    </div>
+    <div class="model-card">
+      <h3>A sensory-aware environment</h3>
+      <p>The building was designed around neurodivergent children. The sensory calibration, the layout, the visual cues — all of it supports the work you are doing in session.</p>
+    </div>
+    <div class="model-card">
+      <h3>Professional community</h3>
+      <p>You are working alongside other therapists and a lead special needs teacher. There is opportunity for cross-referral, collaboration, and peer connection.</p>
+    </div>
+    <div class="model-card">
+      <h3>Flexible scheduling</h3>
+      <p>Rooms are available by the hour or as part of a regular booking arrangement. We work around your existing practice, not the other way around.</p>
+    </div>
+    <div class="model-card">
+      <h3>Impact beyond sessions</h3>
+      <p>Children you see in therapy can continue their development through play in the same visit. Progress does not stop when the session ends.</p>
+    </div>
+  </div>
+
+  <p class="t-h2">Who we are looking to work with</p>
+  <p>We are actively building a network of practitioners across occupational therapy, speech and language therapy, play therapy, behavioural therapy, and child psychology. If you are a qualified, registered practitioner working with neurodivergent children in Nairobi, we would like to hear from you.</p>
+  <p>We are in contact with <strong>KAOT</strong> (Kenya Association of Occupational Therapists) and <strong>SLHAK</strong> (Speech and Language Hearing Association of Kenya) and welcome practitioners from both associations.</p>
+
+  <p class="t-h2">Our longer-term vision</p>
+  <p>We are building toward a model where Neuronest's play revenue helps cross-subsidise therapy access for families who cannot afford current market rates. As that model develops, practitioners who are part of the Neuronest network will be central to it. We are not just offering a room to rent — we are building something together.</p>
+</div>
+
+<div class="contact-band">
+  <h2>Interested in working from Neuronest?</h2>
+  <p>Read through the information above, then get in touch. We are happy to show you the space, answer any questions, and talk through how the arrangement would work for your practice.</p>
+  <div class="contact-btns">
+    <a href="https://wa.me/254768199515" target="_blank" class="btn-wh">WhatsApp Us</a>
+    <a href="mailto:info@neuronestltd.com" class="btn-wh-outline">Email Us</a>
+  </div>
+</div>
+<footer>
+  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <ul class="f-links">
+    <li><a href="about.html">Our Story</a></li><li><a href="open-play.html">Open Play</a></li>
+    <li><a href="programs.html">Programs</a></li><li><a href="space.html">The Space</a></li>
+    <li><a href="therapists.html">For Therapists</a></li><li><a href="gallery.html">Gallery</a></li>
+  </ul>
+  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+</footer>
+</body>
+</html>

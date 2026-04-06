@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs and Services &mdash; Neuronest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #00A896; --teal-dk: #008F7E;
+      --coral: #E8603A; --coral-dk: #CC4F2B;
+      --sun: #F4C430; --navy: #1A2E4A;
+      --mid: #4A5A6A; --light: #8A9AB0;
+      --white: #FFFFFF; --offwhite: #F5F9F8; --sun-bg: #FEF8E1;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
+    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
+    .top-bar a { color: white; font-weight: 600; text-decoration: none; }
+    .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
+    .header-logo { padding-bottom: 0.5rem; }
+    .header-logo img { height: 100px; display: block; }
+    .header-right { padding-bottom: 1rem; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+    .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 0.45rem 1.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
+    .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
+    .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
+    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+    .btn-coral { background: var(--coral); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-coral:hover { background: var(--coral-dk); transform: translateY(-2px); }
+    .btn-teal { background: var(--teal); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-teal:hover { background: var(--teal-dk); transform: translateY(-2px); }
+    .btn-wh { background: white; color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-wh-outline { background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
+    .page-hero { height: 48vh; min-height: 300px; position: relative; overflow: hidden; }
+    .page-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,46,74,0.25), rgba(26,46,74,0.68)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .pg-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 0.8rem; }
+    .page-hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; color: white; line-height: 1.15; max-width: 640px; margin-bottom: 0.8rem; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 480px; line-height: 1.7; font-weight: 300; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; text-decoration: none; }
+    .f-logo span { color: var(--sun); }
+    .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a:hover { color: white; }
+    .f-copy { font-size: 0.78rem; }
+    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 80px; } }
+    @media (max-width: 600px) { .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
+
+    .content { padding: 5rem 6vw; max-width: 1100px; margin: 0 auto; }
+    .prog-section { margin-bottom: 5rem; }
+    .prog-section:last-child { margin-bottom: 0; }
+    .prog-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .prog-inner.flip { }
+    .prog-img { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 12px 48px rgba(26,46,74,0.12); }
+    .prog-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .prog-body p { font-size: 0.95rem; line-height: 1.85; color: var(--mid); font-weight: 300; margin-bottom: 1.2rem; }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin: 1.5rem 0 2rem; }
+    .detail-list li { font-size: 0.88rem; color: var(--mid); padding: 0.7rem 1rem; background: var(--offwhite); border-radius: 10px; border-left: 3px solid var(--teal); line-height: 1.5; }
+    .detail-list li strong { color: var(--navy); font-weight: 600; }
+    .divider { border: none; border-top: 1px solid rgba(26,46,74,0.08); margin: 5rem 0; }
+    .pricing-bg { background: var(--offwhite); padding: 5rem 6vw; }
+    .pricing-wrap { max-width: 1100px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .p-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 4px 24px rgba(26,46,74,0.06); border-top: 4px solid var(--teal); }
+    .p-card.hl { border-top-color: var(--coral); background: var(--navy); }
+    .p-card h3 { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: var(--navy); margin-bottom: 0.3rem; }
+    .p-card.hl h3 { color: var(--sun); }
+    .p-sub { font-size: 0.78rem; color: var(--light); margin-bottom: 1.5rem; }
+    .p-card.hl .p-sub { color: rgba(255,255,255,0.5); }
+    .p-price { font-family: 'Nunito', sans-serif; font-size: 2rem; font-weight: 900; color: var(--navy); line-height: 1; margin-bottom: 0.2rem; }
+    .p-card.hl .p-price { color: white; }
+    .p-note { font-size: 0.75rem; color: var(--light); margin-bottom: 1.5rem; }
+    .p-card.hl .p-note { color: rgba(255,255,255,0.45); }
+    .p-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .p-list li { font-size: 0.83rem; color: var(--mid); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+    .p-list li::before { content: ''; position: absolute; left: 0; top: 0.52rem; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+    .p-card.hl .p-list li { color: rgba(255,255,255,0.72); }
+    .p-card.hl .p-list li::before { background: var(--sun); }
+    .therapy-table { width: 100%; border-collapse: collapse; margin-top: 2rem; border-radius: 14px; overflow: hidden; }
+    .therapy-table th { background: var(--navy); color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 800; padding: 1rem 1.2rem; text-align: left; }
+    .therapy-table td { padding: 0.9rem 1.2rem; font-size: 0.88rem; color: var(--mid); border-bottom: 1px solid rgba(26,46,74,0.07); }
+    .therapy-table tr:last-child td { border-bottom: none; }
+    .therapy-table tr:nth-child(even) td { background: var(--offwhite); }
+    .t-note { font-size: 0.8rem; color: var(--light); margin-top: 1rem; font-style: italic; line-height: 1.6; }
+    @media (max-width: 900px) { .prog-inner { grid-template-columns: 1fr; gap: 2rem; } .pricing-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="top-bar">
+  <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 8PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
+</div>
+<div class="site-header">
+  <div class="header-logo"><a href="index.html"><img src="https://neuronestltd.com/wp-content/uploads/2025/11/Final-Logo-1024x791.png" alt="Neuronest" /></a></div>
+  <div class="header-right">
+    <div class="header-tagline">Embracing Every Mind!</div>
+    <ul class="nav-pills">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="open-play.html">Open Play</a></li>
+      <li><a href="programs.html" class="active">Programs</a></li>
+      <li><a href="space.html">The Space</a></li>
+      <li><a href="therapists.html">For Therapists</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#find-us">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-hero">
+  <img src="img_swings.jpeg" alt="Programs at Neuronest" />
+  <div class="page-hero-overlay">
+    <div class="pg-eyebrow">Programs and Services</div>
+    <h1>Everything your child needs, in one place</h1>
+    <p>From drop in play to structured therapy, we have built a range of services around real family needs.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="prog-section" id="dropin">
+    <div class="prog-inner">
+      <div class="prog-img"><img src="img_swings.jpeg" alt="Open Play at Neuronest" /></div>
+      <div class="prog-body">
+        <span class="sec-label">Open Play</span>
+        <div class="sec-title">Walk in. No appointment needed.</div>
+        <p>A safe, sensory friendly space where your child can explore freely. You can stay beside your child, sit nearby and watch, or step back and let our trained staff take care.</p>
+        <ul class="detail-list">
+          <li><strong>Weekdays:</strong> KES 1,000 per child. Currently unlimited time.</li>
+          <li><strong>Weekends:</strong> KES 1,500 per child, 3 hour session. Additional hours at KES 500 each.</li>
+          <li><strong>Adults:</strong> Accompanying adults enter free.</li>
+          <li><strong>Payment:</strong> M PESA Paybill 542542, bank transfer or card. No cash.</li>
+        </ul>
+        <a href="open-play.html" class="btn-teal">Full Open Play Details</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="prog-section" id="preschool">
+    <div class="prog-inner">
+      <div class="prog-body">
+        <span class="sec-label">Preschool Readiness Program</span>
+        <div class="sec-title">Preparing your child for school, through play.</div>
+        <p>A structured program designed for neurodivergent children preparing to enter a school environment. Led by our specialist teacher and supported by our on site therapists, it builds the foundational skills children need through play based methods that work for how neurodivergent children actually learn.</p>
+        <ul class="detail-list">
+          <li><strong>Who it is for:</strong> Children aged 2 to 6 preparing for preschool or primary school.</li>
+          <li><strong>Structure:</strong> Small groups with a rotating specialist model and individual attention.</li>
+          <li><strong>Led by:</strong> Our lead special needs teacher with OT and speech therapy support.</li>
+          <li>Enquire for current cohort availability and fees.</li>
+        </ul>
+        <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Enquire via WhatsApp</a>
+      </div>
+      <div class="prog-img"><img src="img_sensory_wall.jpeg" alt="Preschool Readiness Program" /></div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="prog-section" id="therapy">
+    <div class="prog-inner">
+      <div class="prog-img"><img src="img_therapy_room.jpeg" alt="Therapy Sessions at Neuronest" /></div>
+      <div class="prog-body">
+        <span class="sec-label">Therapy Sessions</span>
+        <div class="sec-title">Professional therapy, right here on site.</div>
+        <p>Therapy suites are available on site for occupational therapy and speech therapy, provided by independent qualified practitioners. Therapy can happen in the same visit as play — no separate journey required.</p>
+        <p>All rates are set at the minimal viable rate. Discounts cannot be applied to therapy services.</p>
+        <table class="therapy-table">
+          <tr><th>Service</th><th>Rate</th><th>Notes</th></tr>
+          <tr><td>OT Assessment</td><td>KES 3,500</td><td>Duration guided by the child</td></tr>
+          <tr><td>OT Session</td><td>KES 3,000</td><td>Per hour</td></tr>
+          <tr><td>Speech Assessment</td><td>KES 3,000</td><td>Duration guided by the child</td></tr>
+          <tr><td>Speech Session</td><td>KES 2,500</td><td>Per hour</td></tr>
+        </table>
+        <p class="t-note">To book a session, contact us via WhatsApp or email and we will connect you with the right practitioner.</p>
+        <a href="https://wa.me/254768199515" target="_blank" class="btn-coral" style="margin-top:1.5rem;">Book via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-bg" id="membership">
+  <div class="pricing-wrap">
+    <span class="sec-label">Memberships</span>
+    <div class="sec-title">Visit often? There is a package for that.</div>
+    <p style="font-size:0.95rem;color:var(--mid);max-width:580px;font-weight:300;line-height:1.8;">If Neuronest is becoming part of your family's regular week, our packages are designed to save you money while keeping access flexible.</p>
+    <div class="pricing-grid">
+      <div class="p-card">
+        <h3>Single Child</h3>
+        <p class="p-sub">4 or more sessions booked in a month</p>
+        <div class="p-price">10% off</div>
+        <p class="p-note">standard rates per session</p>
+        <ul class="p-list">
+          <li>Book 4 or more sessions upfront</li>
+          <li>Bulk payment required to activate</li>
+          <li>Sessions redeemed within the same month</li>
+        </ul>
+      </div>
+      <div class="p-card hl">
+        <h3>Multiple Siblings</h3>
+        <p class="p-sub">Two or more children visiting together</p>
+        <div class="p-price">20% off</div>
+        <p class="p-note">per child on standard rates</p>
+        <ul class="p-list">
+          <li>20% discount applies to each child</li>
+          <li>Standard sessions and timing apply</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <h3>Core Crew</h3>
+        <p class="p-sub">Multiple days per week, all month</p>
+        <div class="p-price">20% off</div>
+        <p class="p-note">total monthly charges</p>
+        <ul class="p-list">
+          <li>Minimum 10 sessions per month</li>
+          <li>Bulk payment at start of month</li>
+          <li>Unlimited time on weekdays</li>
+          <li>3 hours per weekend session</li>
+          <li>Example: 8 weekdays + 3 weekends = KES 10,000</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--mid);margin-top:2rem;line-height:1.7;background:white;padding:1.2rem 1.5rem;border-radius:12px;border-left:3px solid var(--teal);">
+      <strong style="color:var(--navy);">Link Crew:</strong> If your child attends therapy at Neuronest more than twice a week, you qualify for standard play rates on all additional sessions. Contact us to set this up.
+    </p>
+    <div style="margin-top:2.5rem;">
+      <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Talk to Us About Membership</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <ul class="f-links">
+    <li><a href="about.html">Our Story</a></li><li><a href="open-play.html">Open Play</a></li>
+    <li><a href="programs.html">Programs</a></li><li><a href="space.html">The Space</a></li>
+    <li><a href="therapists.html">For Therapists</a></li><li><a href="gallery.html">Gallery</a></li>
+  </ul>
+  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+</footer>
+</body>
+</html>
