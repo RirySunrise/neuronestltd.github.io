@@ -1,158 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery &mdash; Neuronest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --teal: #00A896; --teal-dk: #008F7E;
-      --coral: #E8603A; --coral-dk: #CC4F2B;
-      --sun: #F4C430; --navy: #1A2E4A;
-      --mid: #4A5A6A; --light: #8A9AB0;
-      --white: #FFFFFF; --offwhite: #F5F9F8; --sun-bg: #FEF8E1;
+      --orange: #D87E24; --green: #5AB45A; --blue: #365AA2;
+      --teal: #24A290; --purple: #A26CB4; --pink: #EA5A6C;
+      --darkred: #903636; --ink: #2C2C2C; --warm: #FDF8F2;
+      --white: #FFFFFF; --sand: #FAF0E0; --mid: #5A5A5A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
-    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
-    .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
-    .top-bar a { color: white; font-weight: 600; text-decoration: none; }
-    .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
-    .header-logo { padding-bottom: 0.5rem; }
-    .header-logo img { height: 100px; display: block; }
-    .header-right { padding-bottom: 1rem; }
-    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
-    .nav-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
-    .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 0.45rem 1.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
-    .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
-    .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
-    .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
-    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
-    .btn-coral { background: var(--coral); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-coral:hover { background: var(--coral-dk); transform: translateY(-2px); }
-    .btn-teal { background: var(--teal); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-teal:hover { background: var(--teal-dk); transform: translateY(-2px); }
-    .btn-wh { background: white; color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-wh-outline { background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
-    .btn-wh-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
-    .page-hero { height: 48vh; min-height: 300px; position: relative; overflow: hidden; }
-    .page-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
-    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,46,74,0.25), rgba(26,46,74,0.68)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-    .pg-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 0.8rem; }
-    .page-hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; color: white; line-height: 1.15; max-width: 640px; margin-bottom: 0.8rem; }
-    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 480px; line-height: 1.7; font-weight: 300; }
-    footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; text-decoration: none; }
-    .f-logo span { color: var(--sun); }
-    .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    body { font-family: 'Lato', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
+
+    .top-bar { background: var(--blue); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+    .top-bar a, .top-bar span { font-size: 0.78rem; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .top-bar a:hover { color: white; text-decoration: underline; }
+
+    .site-header { background: var(--warm); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 3px solid var(--sand); flex-wrap: wrap; }
+    .header-logo img { height: 90px; display: block; }
+    .header-center { text-align: center; flex: 1; }
+    .header-tagline { font-family: 'Fredoka One', cursive; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; line-height: 1.2; }
+    .header-sub { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
+    .header-right { text-align: right; font-size: 0.82rem; color: var(--mid); line-height: 1.7; }
+    .header-right a { color: var(--teal); font-weight: 700; text-decoration: none; }
+
+    .main-nav { background: var(--teal); padding: 0 3vw; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
+    .main-nav a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.75rem 0.85rem; transition: background 0.2s; white-space: nowrap; }
+    .main-nav a:hover { background: rgba(255,255,255,0.15); }
+    .main-nav a.active { background: var(--orange); }
+    .main-nav a.cta { background: var(--pink); margin-left: auto; }
+    .main-nav a.cta:hover { background: var(--darkred); }
+
+    .colour-band { display: flex; height: 7px; }
+    .colour-band span { flex: 1; }
+
+    .btn-orange { background: var(--orange); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-orange:hover { background: #C06E18; transform: translateY(-2px); }
+    .btn-teal { background: var(--teal); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-teal:hover { background: #1A8070; transform: translateY(-2px); }
+    .btn-clear { background: transparent; color: white; padding: 0.85rem 2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.4); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.92rem; transition: all 0.2s; display: inline-block; }
+    .btn-clear:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .btn-wh { background: white; color: var(--navy, #1A2E4A); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: white; text-decoration: none; }
+    .f-logo span { color: var(--orange); }
+    .f-links { display: flex; gap: 1.2rem; list-style: none; flex-wrap: wrap; }
     .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
     .f-copy { font-size: 0.78rem; }
-    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 80px; } }
-    @media (max-width: 600px) { .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
 
-    .gallery-intro { padding: 3rem 6vw 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
-    .gallery-intro p { font-size: 0.95rem; line-height: 1.8; color: var(--mid); font-weight: 300; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; padding: 2rem 6vw 5rem; max-width: 1200px; margin: 0 auto; }
+    @media (max-width: 768px) {
+      .top-bar { justify-content: center; gap: 0.8rem; }
+      .site-header { flex-direction: column; align-items: center; text-align: center; padding: 1rem 4vw; }
+      .header-right { display: none; }
+      .header-logo img { height: 75px; }
+      .main-nav { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding: 0 2vw; }
+      .main-nav a { font-size: 0.8rem; padding: 0.7rem 0.75rem; }
+      .main-nav a.cta { margin-left: 0; }
+      footer { flex-direction: column; align-items: center; text-align: center; }
+      .f-links { justify-content: center; }
+    }
+    .page-hero { position: relative; height: 48vh; min-height: 280px; overflow: hidden; }
+    .page-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .page-hero-ov { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(54,90,162,0.3), rgba(54,90,162,0.68)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .page-hero-ov h1 { font-family: 'Fredoka One', cursive; font-size: clamp(2rem,5vw,3.2rem); color: white; margin-bottom: 0.8rem; }
+    .page-hero-ov p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 480px; line-height: 1.7; font-weight: 300; }
+    .pg-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.65); font-weight: 700; margin-bottom: 0.7rem; }
+    .gal-intro { padding: 3rem 6vw 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .gal-intro p { font-size: 0.95rem; color: var(--mid); font-weight: 300; line-height: 1.8; }
+    .gal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; padding: 2rem 6vw 4rem; max-width: 1200px; margin: 0 auto; }
     .g-item { border-radius: 14px; overflow: hidden; position: relative; cursor: pointer; }
     .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
     .g-item:hover img { transform: scale(1.05); }
     .g-item.tall { grid-row: span 2; }
     .g-item.wide { grid-column: span 2; }
-    .g-h { height: 260px; }
-    .g-t { height: 528px; }
-    .g-w { height: 260px; }
-    .g-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(26,46,74,0.8)); color: white; padding: 1.5rem 1rem 0.9rem; opacity: 0; transition: opacity 0.3s; }
-    .g-item:hover .g-caption { opacity: 1; }
-    .g-caption span { font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; }
-    .cta-band { background: var(--navy); padding: 4rem 6vw; text-align: center; }
-    .cta-band h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: white; margin-bottom: 1rem; }
-    .cta-band p { font-size: 0.92rem; color: rgba(255,255,255,0.7); font-weight: 300; max-width: 440px; margin: 0 auto 2rem; line-height: 1.75; }
-    @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr 1fr; } .g-item.tall, .g-item.wide { grid-column: span 1; grid-row: span 1; } .g-h, .g-t, .g-w { height: 220px; } }
-    @media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; } .g-h, .g-t, .g-w { height: 240px; } }
-  </style>
+    .g-h { height: 250px; }
+    .g-t { height: 508px; }
+    .g-w { height: 250px; }
+    .g-cap { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(54,90,162,0.8)); color: white; padding: 1.5rem 1rem 0.9rem; opacity: 0; transition: opacity 0.3s; }
+    .g-item:hover .g-cap { opacity: 1; }
+    .g-cap span { font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; }
+    .cta-band { background: var(--blue); padding: 4rem 6vw; text-align: center; }
+    .cta-band h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.6rem,3vw,2.2rem); color: white; margin-bottom: 0.9rem; }
+    .cta-band p { font-size: 0.92rem; color: rgba(255,255,255,0.7); font-weight: 300; max-width: 420px; margin: 0 auto 2rem; line-height: 1.75; }
+    @media (max-width: 900px) { .gal-grid { grid-template-columns: 1fr 1fr; } .g-item.tall,.g-item.wide { grid-column: span 1; grid-row: span 1; } .g-h,.g-t,.g-w { height: 210px; } }
+    @media (max-width: 600px) { .gal-grid { grid-template-columns: 1fr; } .g-h,.g-t,.g-w { height: 230px; } }</style>
 </head>
 <body>
 <div class="top-bar">
-  <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 8PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
-</div>
-<div class="site-header">
-  <div class="header-logo"><a href="index.html"><img src="https://neuronestltd.com/wp-content/uploads/2025/11/Final-Logo-1024x791.png" alt="Neuronest" /></a></div>
-  <div class="header-right">
-    <div class="header-tagline">Embracing Every Mind!</div>
-    <ul class="nav-pills">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Our Story</a></li>
-      <li><a href="open-play.html">Open Play</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="space.html">The Space</a></li>
-      <li><a href="therapists.html">For Therapists</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="index.html#find-us">Contact</a></li>
-    </ul>
+  <span>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi</span>
+  <span>Mon to Sun 9:00 AM to 7:00 PM</span>
+  <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a>
+  <a href="tel:+254768199515">+254 768 199 515</a>
+</div><div class="site-header">
+  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="Neuronest" /></a></div>
+  <div class="header-center">
+    <div class="header-tagline">Welcome to Neuronest!</div>
+    <div class="header-sub">A safe and joyful place for every child to just be</div>
   </div>
+  <div class="header-right">
+    <strong style="color:var(--ink);">Open today</strong><br>9:00 AM to 7:00 PM<br>
+    <a href="tel:+254768199515">+254 768 199 515</a>
+  </div>
+</div><nav class="main-nav"><a href="index.html">Home</a><a href="about.html">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="therapists.html">For Therapists</a><a href="gallery.html" class="active">Gallery</a><a href="index.html#find-us" class="cta">Visit Us</a></nav><div class="colour-band">
+  <span style="background:var(--orange)"></span><span style="background:var(--green)"></span>
+  <span style="background:var(--blue)"></span><span style="background:var(--teal)"></span>
+  <span style="background:var(--purple)"></span><span style="background:var(--pink)"></span>
+  <span style="background:var(--darkred)"></span>
 </div>
-
 <div class="page-hero">
   <img src="img_entrance.jpeg" alt="Neuronest gallery" />
-  <div class="page-hero-overlay">
+  <div class="page-hero-ov">
     <div class="pg-eyebrow">Gallery</div>
     <h1>See the space for yourself</h1>
-    <p>A look inside Neuronest — the play areas, therapy suites, and the environment we have built for your child.</p>
+    <p>A look inside Neuronest. The play areas, therapy suites, and the environment we have built for your child.</p>
   </div>
 </div>
-
-<div class="gallery-intro">
-  <span class="sec-label">Our Space</span>
-  <div class="sec-title" style="margin-bottom:0.8rem;">Every detail, deliberately designed</div>
-  <p>These photos show the real Neuronest — no staging, no filters. What you see is what your child will walk into.</p>
+<div class="gal-intro">
+  <div style="font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);margin-bottom:0.7rem;">Every detail, deliberately designed</div>
+  <p>These photos show the real Neuronest. No staging. What you see is what your child will walk into.</p>
 </div>
-
-<div class="gallery-grid">
-  <div class="g-item tall g-t">
-    <img src="img_swings.jpeg" alt="Sensory swings and gym at Neuronest" />
-    <div class="g-caption"><span>Sensory Swings and Gym</span></div>
-  </div>
-  <div class="g-item g-h">
-    <img src="img_therapy_room.jpeg" alt="Therapy suite" />
-    <div class="g-caption"><span>Therapy Suite</span></div>
-  </div>
-  <div class="g-item g-h">
-    <img src="img_therapy_learning.jpeg" alt="Learning room" />
-    <div class="g-caption"><span>Learning Room</span></div>
-  </div>
-  <div class="g-item wide g-w">
-    <img src="img_sensory_wall.jpeg" alt="Sensory wall and creative table" />
-    <div class="g-caption"><span>Sensory Wall and Creative Table</span></div>
-  </div>
-  <div class="g-item g-h">
-    <img src="https://neuronestltd.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-01-at-20.14.25.jpeg" alt="Creative play pods" />
-    <div class="g-caption"><span>Creative Play Pods</span></div>
-  </div>
-  <div class="g-item wide g-w">
-    <img src="img_entrance.jpeg" alt="Neuronest entrance" />
-    <div class="g-caption"><span>The Entrance</span></div>
-  </div>
-  <div class="g-item g-h">
-    <img src="https://neuronestltd.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-01-at-20.14.21.jpeg" alt="Play area" />
-    <div class="g-caption"><span>Play Area</span></div>
-  </div>
+<div class="gal-grid">
+  <div class="g-item tall g-t"><img src="img_swings.jpeg" alt="Sensory swings and gym" /><div class="g-cap"><span>Sensory Swings and Gym</span></div></div>
+  <div class="g-item g-h"><img src="img_therapy_room.jpeg" alt="Therapy suite" /><div class="g-cap"><span>Therapy Suite</span></div></div>
+  <div class="g-item g-h"><img src="img_therapy_learning.jpeg" alt="Learning room" /><div class="g-cap"><span>Learning Room</span></div></div>
+  <div class="g-item wide g-w"><img src="img_sensory_wall.jpeg" alt="Sensory wall and creative table" /><div class="g-cap"><span>Sensory Wall and Creative Table</span></div></div>
+  <div class="g-item g-h"><img src="https://neuronestltd.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-01-at-20.14.25.jpeg" alt="Creative play pods" /><div class="g-cap"><span>Creative Play Pods</span></div></div>
+  <div class="g-item wide g-w"><img src="img_entrance.jpeg" alt="Neuronest entrance" /><div class="g-cap"><span>The Entrance</span></div></div>
+  <div class="g-item g-h"><img src="https://neuronestltd.com/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-01-at-20.14.21.jpeg" alt="Play area" /><div class="g-cap"><span>Play Area</span></div></div>
 </div>
-
 <div class="cta-band">
   <h2>Want to see it in person?</h2>
   <p>Walk ins are always welcome during our opening hours. No appointment needed for open play.</p>
-  <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">WhatsApp Us to Visit</a>
-</div>
-<footer>
+  <a href="https://wa.me/254768199515" target="_blank" class="btn-orange">WhatsApp Us to Visit</a>
+</div><footer>
   <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
   <ul class="f-links">
-    <li><a href="about.html">Our Story</a></li><li><a href="open-play.html">Open Play</a></li>
-    <li><a href="programs.html">Programs</a></li><li><a href="space.html">The Space</a></li>
-    <li><a href="therapists.html">For Therapists</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="open-play.html">Open Play</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="space.html">The Space</a></li>
+    <li><a href="therapists.html">For Therapists</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
   </ul>
   <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
 </footer>
