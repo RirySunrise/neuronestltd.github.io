@@ -6,7 +6,7 @@
   <title>Open Play &mdash; Neuronest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -16,22 +16,32 @@
       --white: #FFFFFF; --sand: #FAF0E0; --mid: #5A5A5A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
 
     .top-bar { background: var(--blue); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
     .top-bar a, .top-bar span { font-size: 0.78rem; color: rgba(255,255,255,0.85); text-decoration: none; }
     .top-bar a:hover { color: white; text-decoration: underline; }
 
     .site-header { background: var(--warm); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 3px solid var(--sand); flex-wrap: wrap; }
-    .header-logo img { height: 90px; display: block; }
+    .header-logo img { height: 120px; display: block; }
     .header-center { text-align: center; flex: 1; }
-    .header-tagline { font-family: 'Fredoka One', cursive; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; line-height: 1.2; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; line-height: 1.2; }
     .header-sub { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
     .header-right { text-align: right; font-size: 0.82rem; color: var(--mid); line-height: 1.7; }
     .header-right a { color: var(--teal); font-weight: 700; text-decoration: none; }
 
-    .main-nav { background: var(--teal); padding: 0 3vw; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
-    .main-nav a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.75rem 0.85rem; transition: background 0.2s; white-space: nowrap; }
+    .main-nav { background: var(--teal); padding: 0 3vw; min-height: 46px; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.7rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
     .main-nav a:hover { background: rgba(255,255,255,0.15); }
     .main-nav a.active { background: var(--orange); }
     .main-nav a.cta { background: var(--pink); margin-left: auto; }
@@ -48,11 +58,11 @@
     .btn-clear:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-wh { background: white; color: var(--navy, #1A2E4A); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .f-logo { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: white; text-decoration: none; }
-    .f-logo span { color: var(--orange); }
+    footer { background: var(--teal); color: rgba(255,255,255,0.85); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { color: white; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: white; text-decoration: none; letter-spacing: 0.01em; }
+    
     .f-links { display: flex; gap: 1.2rem; list-style: none; flex-wrap: wrap; }
-    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
     .f-copy { font-size: 0.78rem; }
 
@@ -60,7 +70,7 @@
       .top-bar { justify-content: center; gap: 0.8rem; }
       .site-header { flex-direction: column; align-items: center; text-align: center; padding: 1rem 4vw; }
       .header-right { display: none; }
-      .header-logo img { height: 75px; }
+      .header-logo img { height: 100px; }
       .main-nav { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding: 0 2vw; }
       .main-nav a { font-size: 0.8rem; padding: 0.7rem 0.75rem; }
       .main-nav a.cta { margin-left: 0; }
@@ -70,25 +80,25 @@
     .page-hero { position: relative; height: 50vh; min-height: 300px; overflow: hidden; }
     .page-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .page-hero-ov { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(54,90,162,0.3), rgba(54,90,162,0.7)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-    .page-hero-ov h1 { font-family: 'Fredoka One', cursive; font-size: clamp(2rem,5vw,3.2rem); color: white; margin-bottom: 0.8rem; }
+    .page-hero-ov h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(2rem,5vw,3.2rem); color: white; margin-bottom: 0.8rem; }
     .page-hero-ov p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 480px; line-height: 1.7; font-weight: 300; }
     .pg-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.65); font-weight: 700; margin-bottom: 0.7rem; }
     .content { max-width: 860px; margin: 0 auto; padding: 4rem 6vw; }
     .intro-block { background: var(--blue); border-radius: 22px; padding: 2.8rem; margin-bottom: 3.5rem; text-align: center; }
-    .intro-block h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.4rem,2.5vw,1.9rem); color: white; margin-bottom: 0.9rem; }
+    .intro-block h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.4rem,2.5vw,1.9rem); color: white; margin-bottom: 0.9rem; }
     .intro-block p { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.72); font-weight: 300; max-width: 540px; margin: 0 auto 2rem; }
-    .block-title { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: var(--ink); margin-bottom: 1.1rem; }
+    .block-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--ink); margin-bottom: 1.1rem; }
     .price-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
     .price-box { background: var(--sand); border-radius: 18px; padding: 1.8rem; text-align: center; border-top: 4px solid var(--orange); }
     .price-box h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); margin-bottom: 0.5rem; font-weight: 700; }
-    .price-box .amount { font-family: 'Fredoka One', cursive; font-size: 2.6rem; color: var(--blue); line-height: 1; margin-bottom: 0.25rem; }
+    .price-box .amount { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2.6rem; color: var(--blue); line-height: 1; margin-bottom: 0.25rem; }
     .price-box .sub { font-size: 0.75rem; color: var(--mid); }
     .info-note { background: var(--warm); border-radius: 14px; padding: 1.2rem 1.5rem; margin-bottom: 3rem; font-size: 0.85rem; color: var(--mid); line-height: 1.7; border-left: 4px solid var(--teal); }
     .notes-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 3.5rem; }
     .notes-list li { background: white; border-radius: 12px; padding: 1rem 1.3rem; font-size: 0.88rem; color: var(--mid); line-height: 1.6; display: flex; gap: 0.8rem; align-items: flex-start; border-left: 4px solid var(--orange); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
     .notes-list li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 0.42rem; }
     .rules-intro { background: var(--teal); border-radius: 22px; padding: 2.2rem 2.5rem; text-align: center; margin-bottom: 2rem; }
-    .rules-intro h2 { font-family: 'Fredoka One', cursive; font-size: 1.5rem; color: white; margin-bottom: 0.5rem; }
+    .rules-intro h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; color: white; margin-bottom: 0.5rem; }
     .rules-intro p { font-size: 0.92rem; color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.7; }
     .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 3rem; }
     .rule-card { background: white; border-radius: 18px; padding: 1.7rem; box-shadow: 0 2px 14px rgba(0,0,0,0.05); border-top: 3px solid var(--teal); }
@@ -119,14 +129,14 @@
     <strong style="color:var(--ink);">Open today</strong><br>9:00 AM to 7:00 PM<br>
     <a href="tel:+254768199515">+254 768 199 515</a>
   </div>
-</div><nav class="main-nav"><a href="index.html">Home</a><a href="about.html">Our Story</a><a href="open-play.html" class="active">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="therapists.html">For Therapists</a><a href="gallery.html">Gallery</a><a href="index.html#find-us" class="cta">Visit Us</a></nav><div class="colour-band">
+</div><nav class="main-nav"><a href="index.html">Home</a><a href="about.html">Our Story</a><a href="open-play.html" class="active">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="therapists.html">For Therapists</a><a href="gallery.html">Gallery</a><a href="social-story.html">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a></nav><div class="colour-band">
   <span style="background:var(--orange)"></span><span style="background:var(--green)"></span>
   <span style="background:var(--blue)"></span><span style="background:var(--teal)"></span>
   <span style="background:var(--purple)"></span><span style="background:var(--pink)"></span>
   <span style="background:var(--darkred)"></span>
 </div>
 <div class="page-hero">
-  <img src="img_swings.jpeg" alt="Children playing at Neuronest" />
+  <img src="main_play_2.jpeg" alt="Children playing at Neuronest" />
   <div class="page-hero-ov">
     <div class="pg-eyebrow">Open Play</div>
     <h1>Bring your child. Let them explore.</h1>
@@ -165,7 +175,7 @@
     <div class="rule-card"><span class="rule-num">03</span><h3>Choose Kindness</h3><p>Play gently, share the space, and use caring words. Everyone has more fun when we take turns and treat one another with patience and respect.</p><span class="rule-note">Kind play keeps the space happy.</span></div>
     <div class="rule-card"><span class="rule-num">04</span><h3>Quiet Room is a Calm Space</h3><p>Our quiet room is designed for rest, regulation, and deep breaths. Soft voices, slow movements, and calm bodies. Shoes, toys, and food stay outside.</p><span class="rule-note">A perfect place to reset.</span></div>
     <div class="rule-card"><span class="rule-num">05</span><h3>Equipment Stays Together</h3><p>All toys and equipment are built for hands-on fun. Keep pieces together, and if anything feels loose please let our team know straight away.</p></div>
-    <div class="rule-card"><span class="rule-num">06</span><h3>Swings and Climbing</h3><p>Hold on with both hands, take turns, and move with awareness. One rider at a time on swings. Our team is always nearby to support safe play.</p></div>
+    <div class="rule-card"><span class="rule-num">06</span><h3>Swings, Ninja Warrior Swing and Climbing</h3><p>Hold on with both hands, take turns, and move with awareness. One rider at a time on swings and the Ninja Warrior Swing. Our team is always nearby to support safe play.</p></div>
     <div class="rule-card"><span class="rule-num">07</span><h3>Care for the Space</h3><p>Please tidy up after your session, let staff know about spills, and help us keep the environment fresh for every family who comes after you.</p></div>
     <div class="rule-card"><span class="rule-num">08</span><h3>Everyone Belongs Here</h3><p>We celebrate children of all abilities, learning styles, and personalities. Kindness and open hearts make Neuronest a place where every child feels valued.</p><span class="rule-note">Play kindly. Laugh loudly. Explore safely.</span></div>
   </div>
@@ -178,7 +188,7 @@
     <a href="https://wa.me/254768199515" target="_blank" class="btn-orange">Plan Your Visit</a>
   </div>
 </div><footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuronest</a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
     <li><a href="open-play.html">Open Play</a></li>
@@ -186,6 +196,7 @@
     <li><a href="space.html">The Space</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
     <li><a href="gallery.html">Gallery</a></li>
+    <li></li>
   </ul>
   <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
 </footer>

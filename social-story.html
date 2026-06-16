@@ -7,7 +7,7 @@
   <meta name="description" content="A social story to help neurodivergent children prepare for their first visit to Neuronest. Read together before you come." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -17,22 +17,32 @@
       --white: #FFFFFF; --sand: #FAF0E0; --mid: #5A5A5A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
 
     .top-bar { background: var(--blue); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
     .top-bar a, .top-bar span { font-size: 0.78rem; color: rgba(255,255,255,0.85); text-decoration: none; }
     .top-bar a:hover { color: white; text-decoration: underline; }
 
     .site-header { background: var(--warm); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 3px solid var(--sand); flex-wrap: wrap; }
-    .header-logo img { height: 90px; display: block; }
+    .header-logo img { height: 120px; display: block; }
     .header-center { text-align: center; flex: 1; }
-    .header-tagline { font-family: 'Fredoka One', cursive; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; }
     .header-sub { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
     .header-right { text-align: right; font-size: 0.82rem; color: var(--mid); line-height: 1.7; }
     .header-right a { color: var(--teal); font-weight: 700; text-decoration: none; }
 
-    .main-nav { background: var(--teal); padding: 0 3vw; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
-    .main-nav a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.75rem 0.85rem; transition: background 0.2s; white-space: nowrap; }
+    .main-nav { background: var(--teal); padding: 0 3vw; min-height: 46px; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.7rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
     .main-nav a:hover { background: rgba(255,255,255,0.15); }
     .main-nav a.active { background: var(--orange); }
     .main-nav a.cta { background: var(--pink); margin-left: auto; }
@@ -49,7 +59,7 @@
     }
 
     .story-intro h1 {
-      font-family: 'Fredoka One', cursive;
+      font-family: 'Nunito', sans-serif; font-weight: 900;
       font-size: clamp(2rem, 4vw, 3rem);
       color: white;
       margin-bottom: 0.8rem;
@@ -180,7 +190,7 @@
     }
 
     .story-cover h2 {
-      font-family: 'Fredoka One', cursive;
+      font-family: 'Nunito', sans-serif; font-weight: 900;
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       color: var(--ink);
       margin-bottom: 0.5rem;
@@ -220,7 +230,7 @@
     }
 
     .story-end p {
-      font-family: 'Fredoka One', cursive;
+      font-family: 'Nunito', sans-serif; font-weight: 900;
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       color: white;
       line-height: 1.3;
@@ -244,7 +254,7 @@
     }
 
     .parent-note h3 {
-      font-family: 'Fredoka One', cursive;
+      font-family: 'Nunito', sans-serif; font-weight: 900;
       font-size: 1.3rem;
       color: var(--orange);
       margin-bottom: 1rem;
@@ -260,10 +270,10 @@
 
     .parent-note p:last-child { margin-bottom: 0; }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .f-logo { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: white; text-decoration: none; }
+    footer { background: var(--teal); color: rgba(255,255,255,0.85); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { color: white; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: white; text-decoration: none; }
     .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
-    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
     .f-copy { font-size: 0.78rem; }
 
@@ -271,8 +281,14 @@
       .top-bar { justify-content: center; gap: 0.8rem; }
       .site-header { flex-direction: column; align-items: center; text-align: center; }
       .header-right { display: none; }
-      .header-logo img { height: 75px; }
-      .main-nav { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+      .header-logo img { height: 100px; }
+      .main-nav {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .main-nav::-webkit-scrollbar { display: none; }
       .main-nav a.cta { margin-left: 0; }
       .story-text { padding: 1rem 1.2rem 1.5rem; }
       footer { flex-direction: column; align-items: center; text-align: center; }
@@ -316,8 +332,8 @@
   <a href="space.html">The Space</a>
   <a href="therapists.html">For Therapists</a>
   <a href="gallery.html">Gallery</a>
-  <a href="social-story.html" class="active">Social Story</a>
-  <a href="index.html#find-us" class="cta">Visit Us</a>
+  
+  <a href="social-story.html" class="active">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a>
 </nav>
 
 <div class="colour-band">
@@ -464,7 +480,7 @@
     <li><a href="space.html">The Space</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="social-story.html">Social Story</a></li>
+    <li></li>
   </ul>
   <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
 </footer>

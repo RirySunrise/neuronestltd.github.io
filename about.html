@@ -6,7 +6,7 @@
   <title>Our Story &mdash; Neuronest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -16,22 +16,32 @@
       --white: #FFFFFF; --sand: #FAF0E0; --mid: #5A5A5A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
 
     .top-bar { background: var(--blue); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
     .top-bar a, .top-bar span { font-size: 0.78rem; color: rgba(255,255,255,0.85); text-decoration: none; }
     .top-bar a:hover { color: white; text-decoration: underline; }
 
     .site-header { background: var(--warm); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-bottom: 3px solid var(--sand); flex-wrap: wrap; }
-    .header-logo img { height: 90px; display: block; }
+    .header-logo img { height: 120px; display: block; }
     .header-center { text-align: center; flex: 1; }
-    .header-tagline { font-family: 'Fredoka One', cursive; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; line-height: 1.2; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.3rem,2.5vw,2rem); color: var(--teal); letter-spacing: 0.01em; line-height: 1.2; }
     .header-sub { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
     .header-right { text-align: right; font-size: 0.82rem; color: var(--mid); line-height: 1.7; }
     .header-right a { color: var(--teal); font-weight: 700; text-decoration: none; }
 
-    .main-nav { background: var(--teal); padding: 0 3vw; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
-    .main-nav a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.75rem 0.85rem; transition: background 0.2s; white-space: nowrap; }
+    .main-nav { background: var(--teal); padding: 0 3vw; min-height: 46px; display: flex; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(36,162,144,0.3); }
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.7rem 0.7rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
     .main-nav a:hover { background: rgba(255,255,255,0.15); }
     .main-nav a.active { background: var(--orange); }
     .main-nav a.cta { background: var(--pink); margin-left: auto; }
@@ -48,11 +58,11 @@
     .btn-clear:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-wh { background: white; color: var(--navy, #1A2E4A); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .f-logo { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: white; text-decoration: none; }
-    .f-logo span { color: var(--orange); }
+    footer { background: var(--teal); color: rgba(255,255,255,0.85); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { color: white; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: white; text-decoration: none; letter-spacing: 0.01em; }
+    
     .f-links { display: flex; gap: 1.2rem; list-style: none; flex-wrap: wrap; }
-    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
     .f-copy { font-size: 0.78rem; }
 
@@ -60,7 +70,7 @@
       .top-bar { justify-content: center; gap: 0.8rem; }
       .site-header { flex-direction: column; align-items: center; text-align: center; padding: 1rem 4vw; }
       .header-right { display: none; }
-      .header-logo img { height: 75px; }
+      .header-logo img { height: 100px; }
       .main-nav { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding: 0 2vw; }
       .main-nav a { font-size: 0.8rem; padding: 0.7rem 0.75rem; }
       .main-nav a.cta { margin-left: 0; }
@@ -68,7 +78,7 @@
       .f-links { justify-content: center; }
     }
     .page-hero { background: var(--blue); padding: 4rem 6vw; text-align: center; }
-    .page-hero h1 { font-family: 'Fredoka One', cursive; font-size: clamp(2rem,4vw,3.2rem); color: white; margin-bottom: 1rem; }
+    .page-hero h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3.2rem); color: white; margin-bottom: 1rem; }
     .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 600px; margin: 0 auto; line-height: 1.8; }
     .vms { padding: 4rem 6vw; background: var(--white); }
     .vms-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; max-width: 1100px; margin: 0 auto; }
@@ -77,11 +87,11 @@
     .vm-card.vision { background: var(--blue); }
     .vm-card.goal { background: var(--orange); }
     .vm-label { font-family: 'Nunito', sans-serif; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.6); font-weight: 800; margin-bottom: 0.7rem; }
-    .vm-card h2 { font-family: 'Fredoka One', cursive; font-size: 1.35rem; color: white; margin-bottom: 0.9rem; line-height: 1.2; }
+    .vm-card h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.35rem; color: white; margin-bottom: 0.9rem; line-height: 1.2; }
     .vm-card p { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.75; font-weight: 300; }
-    .vm-num { position: absolute; bottom: -1rem; right: 1.5rem; font-family: 'Fredoka One', cursive; font-size: 5.5rem; color: rgba(255,255,255,0.06); line-height: 1; pointer-events: none; }
+    .vm-num { position: absolute; bottom: -1rem; right: 1.5rem; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 5.5rem; color: rgba(255,255,255,0.06); line-height: 1; pointer-events: none; }
     .values-section { padding: 4rem 6vw; background: var(--sand); }
-    .values-section h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--ink); margin-bottom: 0.5rem; text-align: center; }
+    .values-section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--ink); margin-bottom: 0.5rem; text-align: center; }
     .values-intro { text-align: center; font-size: 0.97rem; color: var(--mid); font-weight: 300; margin-bottom: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto; }
     .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; max-width: 1100px; margin: 0 auto; }
     .val-card { background: white; border-radius: 16px; padding: 1.5rem 1.4rem; border-top: 4px solid var(--teal); }
@@ -89,28 +99,32 @@
     .val-card:nth-child(3n) { border-top-color: var(--green); }
     .val-card h3 { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--ink); margin-bottom: 0.4rem; }
     .val-card p { font-size: 0.83rem; color: var(--mid); line-height: 1.6; }
+    .values-section-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.6rem,2.5vw,2rem); color: var(--ink); margin: 3rem 0 1.5rem; text-align: center; }
+    .val-card.cv { border-top-color: var(--blue); }
+    .val-card.cv:nth-child(2n) { border-top-color: var(--purple); }
+    .val-card.cv:nth-child(3n) { border-top-color: var(--orange); }
     .who { padding: 4rem 6vw; background: var(--white); }
     .who-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto; }
     .who-photo { border-radius: 24px; overflow: hidden; }
     .who-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
-    .who-text h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem,3vw,2.5rem); color: var(--ink); margin-bottom: 1.4rem; line-height: 1.2; }
+    .who-text h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.8rem,3vw,2.5rem); color: var(--ink); margin-bottom: 1.4rem; line-height: 1.2; }
     .who-text h2 span { color: var(--teal); }
     .who-text p { font-size: 0.95rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-bottom: 1.1rem; }
     .who-text p strong { color: var(--ink); font-weight: 700; }
     .story-quote { background: var(--sand); padding: 4rem 6vw; text-align: center; }
-    .quote-mark { font-family: 'Fredoka One', cursive; font-size: 5.5rem; color: var(--teal); opacity: 0.18; line-height: 0.5; margin-bottom: 1.5rem; display: block; }
+    .quote-mark { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 5.5rem; color: var(--teal); opacity: 0.18; line-height: 0.5; margin-bottom: 1.5rem; display: block; }
     .story-quote blockquote { font-family: 'Nunito', sans-serif; font-size: clamp(1.1rem,2.2vw,1.6rem); font-weight: 800; color: var(--ink); max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.5; }
     .story-quote blockquote span { color: var(--teal); }
     .quote-attr { font-size: 0.8rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
     .built { padding: 4rem 6vw; background: var(--white); }
     .built-inner { max-width: 1100px; margin: 0 auto; }
-    .built h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--ink); margin-bottom: 2.5rem; text-align: center; }
+    .built h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--ink); margin-bottom: 2.5rem; text-align: center; }
     .built-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
     .built-item { background: var(--warm); border-radius: 14px; padding: 1.1rem 1.3rem; font-size: 0.87rem; color: var(--mid); line-height: 1.6; border-left: 4px solid var(--orange); }
     .built-item:nth-child(3n+2) { border-left-color: var(--teal); }
     .built-item:nth-child(3n+3) { border-left-color: var(--green); }
     .bigger { background: var(--ink); padding: 4rem 6vw; text-align: center; }
-    .bigger h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem,3vw,2.5rem); color: white; margin-bottom: 1.2rem; }
+    .bigger h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.8rem,3vw,2.5rem); color: white; margin-bottom: 1.2rem; }
     .bigger h2 span { color: var(--orange); }
     .bigger p { font-size: 0.95rem; line-height: 1.9; color: rgba(255,255,255,0.62); font-weight: 300; max-width: 660px; margin: 0 auto 1.3rem; }
     .bigger p:last-of-type { margin-bottom: 2.5rem; }
@@ -144,7 +158,7 @@
     <strong style="color:var(--ink);">Open today</strong><br>9:00 AM to 7:00 PM<br>
     <a href="tel:+254768199515">+254 768 199 515</a>
   </div>
-</div><nav class="main-nav"><a href="index.html">Home</a><a href="about.html" class="active">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="therapists.html">For Therapists</a><a href="gallery.html">Gallery</a><a href="index.html#find-us" class="cta">Visit Us</a></nav><div class="colour-band">
+</div><nav class="main-nav"><a href="index.html">Home</a><a href="about.html" class="active">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="therapists.html">For Therapists</a><a href="gallery.html">Gallery</a><a href="social-story.html">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a></nav><div class="colour-band">
   <span style="background:var(--orange)"></span><span style="background:var(--green)"></span>
   <span style="background:var(--blue)"></span><span style="background:var(--teal)"></span>
   <span style="background:var(--purple)"></span><span style="background:var(--pink)"></span>
@@ -189,11 +203,20 @@
     <div class="val-card"><h3>A true partnership</h3><p>You know your child best. We work with you, not around you, on this journey.</p></div>
     <div class="val-card"><h3>A community that shows up</h3><p>We celebrate your victories and walk alongside you through the challenges.</p></div>
   </div>
+
+  <h2 class="values-section-title">Our Core Values</h2>
+  <div class="values-grid">
+    <div class="val-card cv"><h3>Safety and nurture first</h3><p>Our spaces protect and comfort, always.</p></div>
+    <div class="val-card cv"><h3>Compassionate inclusion</h3><p>Every child and family are respected, welcomed and supported with kindness.</p></div>
+    <div class="val-card cv"><h3>Integrity and transparency</h3><p>We are honest and clear in every decision.</p></div>
+    <div class="val-card cv"><h3>Community and collaboration</h3><p>We build Neuronest together with families and partners.</p></div>
+    <div class="val-card cv"><h3>Curiosity and growth</h3><p>We keep learning, adapting and staying relevant to the needs of every child and family.</p></div>
+  </div>
 </div>
 
 <div class="who">
   <div class="who-inner">
-    <div class="who-photo"><img src="img_entrance.jpeg" alt="Neuronest entrance" /></div>
+    <div class="who-photo"><img src="entrance_new.jpeg" alt="Neuronest entrance" /></div>
     <div class="who-text">
       <h2>Who we are and <span>why we exist</span></h2>
       <p>Neuronest was founded by a family with lived experience of raising a neurodivergent child. Finding a play space that truly understood their child, one designed for them rather than just tolerant of them, proved almost impossible in Nairobi.</p>
@@ -233,7 +256,7 @@
   <a href="programs.html" class="btn-orange">View Our Programs</a>
   <a href="index.html#find-us" class="btn-clear-wh">Visit Us</a>
 </div><footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuronest</a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
     <li><a href="open-play.html">Open Play</a></li>
@@ -241,6 +264,7 @@
     <li><a href="space.html">The Space</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
     <li><a href="gallery.html">Gallery</a></li>
+    <li></li>
   </ul>
   <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
 </footer>
