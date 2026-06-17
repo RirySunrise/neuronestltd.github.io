@@ -38,7 +38,7 @@
       --light:  #8A96A8;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--blue); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: #2C2C2C; overflow-x: hidden; }
 
     /* TOP BAR */
     .top-bar { background: var(--blue-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
@@ -76,7 +76,7 @@
 
     /* SHARED */
     .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
-    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.3rem); font-weight: 900; color: var(--blue); margin-bottom: 1rem; line-height: 1.2; }
+    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.3rem); font-weight: 900; color: #1A1A2E; margin-bottom: 1rem; line-height: 1.2; }
 
     /* BUTTONS */
     .btn-orange { background: var(--orange); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
@@ -85,7 +85,7 @@
     .btn-outline-wh:hover { border-color: white; background: rgba(255,255,255,0.1); }
     .btn-teal { background: var(--teal); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
     .btn-teal:hover { background: #1A8070; transform: translateY(-2px); }
-    .btn-wh { background: white; color: var(--blue); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-wh { background: white; color: #2C2C2C; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
     .btn-wh:hover { background: var(--sand); transform: translateY(-2px); }
 
     /* PAGE HERO (inner pages) */
@@ -98,7 +98,7 @@
 
     /* FOOTER */
     footer { background: var(--teal); color: rgba(255,255,255,0.85); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 900; color: white; text-decoration: none; }
+    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 900; color: white; text-decoration: none; letter-spacing: 0.01em; }
     .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
     .f-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
@@ -138,7 +138,7 @@
     .hero-badge { position: absolute; bottom: 2rem; right: 2rem; background: white; border-radius: 14px; padding: 0.8rem 1.3rem; display: flex; align-items: center; gap: 0.6rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
     .badge-dot { width: 9px; height: 9px; border-radius: 50%; background: #22C55E; animation: blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .badge-txt { font-family: 'Nunito', sans-serif; font-size: 0.82rem; font-weight: 800; color: var(--blue); }
+    .badge-txt { font-family: 'Nunito', sans-serif; font-size: 0.82rem; font-weight: 800; color: #1A1A2E; }
 
     /* PHOTO STRIP */
     .photo-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; height: 280px; }
@@ -148,28 +148,28 @@
 
     /* WELCOME */
     .welcome { padding: 5rem 6vw; background: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .welcome h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 900; color: var(--blue); line-height: 1.2; margin-bottom: 1.2rem; }
+    .welcome h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 900; color: #1A1A2E; line-height: 1.2; margin-bottom: 1.2rem; }
     .welcome h2 span { color: var(--teal); }
     .welcome p { font-size: 0.97rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-bottom: 1.2rem; }
     .welcome-photo { border-radius: 24px; overflow: hidden; position: relative; }
     .welcome-photo img { width: 100%; height: 420px; object-fit: cover; display: block; }
     .welcome-badge { position: absolute; bottom: 1.5rem; left: 1.5rem; background: white; border-radius: 14px; padding: 0.8rem 1.2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 0.6rem; }
     .wb-dot { width: 9px; height: 9px; border-radius: 50%; background: #22C55E; animation: blink 2s infinite; }
-    .wb-txt { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--blue); }
+    .wb-txt { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: #1A1A2E; }
 
     /* SERVICES */
     .services { padding: 5rem 6vw; background: var(--sand); }
     .svc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.4rem; margin-top: 2rem; }
     .svc { background: white; border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.2s, box-shadow 0.2s; border-bottom: 4px solid var(--teal); box-shadow: 0 2px 12px rgba(54,90,162,0.06); }
     .svc:nth-child(2) { border-bottom-color: var(--orange); }
-    .svc:nth-child(3) { border-bottom-color: var(--blue); }
+    .svc:nth-child(3) { border-bottom-color: #2C2C2C; }
     .svc:nth-child(4) { border-bottom-color: #A26CB4; }
     .svc:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(54,90,162,0.12); }
     .svc-img { aspect-ratio: 4/3; overflow: hidden; }
     .svc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
     .svc:hover .svc-img img { transform: scale(1.06); }
     .svc-body { padding: 1.2rem 1.3rem 1.5rem; }
-    .svc-body h3 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; color: var(--blue); margin-bottom: 0.35rem; }
+    .svc-body h3 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; color: #1A1A2E; margin-bottom: 0.35rem; }
     .svc-body p { font-size: 0.8rem; color: var(--mid); line-height: 1.6; margin-bottom: 0.7rem; }
     .svc-link { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--teal); }
 
@@ -192,7 +192,7 @@
     .t-card:nth-child(2) .t-quote { color: var(--orange); }
     .t-stars { color: var(--orange); font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 0.7rem; }
     .t-card p { font-size: 0.93rem; line-height: 1.85; color: var(--mid); font-weight: 300; margin-bottom: 1rem; position: relative; z-index: 1; padding-top: 0.4rem; }
-    .t-author { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 0.06em; }
+    .t-author { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: #1A1A2E; text-transform: uppercase; letter-spacing: 0.06em; }
 
     /* FIND US */
     .find-us { padding: 5rem 6vw; background: white; }
@@ -201,9 +201,9 @@
     .info-item { display: flex; gap: 1rem; align-items: flex-start; }
     .info-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 0.45rem; }
     .info-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light); margin-bottom: 0.15rem; font-weight: 700; }
-    .info-val { font-size: 0.9rem; color: var(--blue); line-height: 1.5; }
+    .info-val { font-size: 0.9rem; color: #2C2C2C; line-height: 1.5; }
     .social-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .soc { background: var(--sand); color: var(--blue); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .soc { background: var(--sand); color: #2C2C2C; padding: 0.5rem 1.2rem; border-radius: 50px; font-family: 'Nunito', sans-serif; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: background 0.2s, color 0.2s; }
     .soc:hover { background: var(--teal); color: white; }
     .wa-btn { display: inline-flex; align-items: center; gap: 0.7rem; background: #22C55E; color: white; padding: 0.85rem 1.8rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; }
     .wa-btn:hover { background: #16A34A; transform: translateY(-2px); }
