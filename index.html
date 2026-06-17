@@ -120,9 +120,12 @@
       .f-links { justify-content: center; }
     }
     /* HERO */
-    .hero { position: relative; height: 92vh; min-height: 560px; overflow: hidden; }
-    .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
-    .hero-ov { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(54,90,162,0.82) 0%, rgba(54,90,162,0.4) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: center; padding: 5rem 8vw; }
+    .hero { position: relative; height: 92vh; min-height: 560px; overflow: hidden; background: #365AA2; }
+    .hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; z-index: 0; }
+    .hero-ov { position: absolute; inset: 0; z-index: 1; background: linear-gradient(135deg, rgba(54,90,162,0.88) 0%, rgba(54,90,162,0.5) 55%, rgba(54,90,162,0.2) 100%); display: flex; flex-direction: column; justify-content: center; padding: 5rem 8vw; }
+    .hero h1 { position: relative; z-index: 2; }
+    .hero-tag, .hero-sub, .hero-btns, .hero-stats { position: relative; z-index: 2; }
+    .hero-badge { position: absolute; bottom: 2rem; right: 2rem; z-index: 2; background: white; border-radius: 14px; padding: 0.8rem 1.3rem; display: flex; align-items: center; gap: 0.6rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
     .hero-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
     .hero-tag::before { content: ''; display: block; width: 24px; height: 2px; background: var(--orange); }
     .hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2.6rem,5vw,4rem); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 1.2rem; max-width: 580px; }
@@ -139,8 +142,8 @@
 
     /* PHOTO STRIP */
     .photo-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; height: 280px; }
-    .photo-strip div { overflow: hidden; }
-    .photo-strip div img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .photo-strip div { overflow: hidden; position: relative; }
+    .photo-strip div img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
     .photo-strip div:hover img { transform: scale(1.04); }
 
     /* WELCOME */
@@ -244,7 +247,7 @@
     <a href="tel:+254768199515">+254 768 199 515</a>
   </div>
 </div>
-<nav class="main-nav"><a href="index.html" class="active">Home</a><a href="about.html">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><div class="nav-drop"><a href="space.html">The Space</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a><a href="space.html#find-us" style="display:none"></a></div></div><a href="therapists.html">For Therapists</a><a href="social-story.html">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a></nav>
+<nav class="main-nav"><a href="index.html" class="active">Home</a><a href="about.html">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><div class="nav-drop"><a href="space.html">The Space</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a></div></div><a href="therapists.html">For Therapists</a><a href="social-story.html">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a></nav>
 <div class="colour-band">
   <span style="background:#D87E24"></span><span style="background:#5AB45A"></span>
   <span style="background:#365AA2"></span><span style="background:#24A290"></span>
