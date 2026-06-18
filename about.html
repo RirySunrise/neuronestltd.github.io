@@ -14,55 +14,55 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --blue:   #365AA2; --blue-dk: #2A4580;
-      --orange: #D87E24; --orange-dk: #C06E18;
-      --teal:   #24A290; --teal-lt: #E0F5F3;
-      --green:  #5AB45A; --purple: #A26CB4;
-      --pink:   #EA5A6C; --darkred: #903636;
-      --cream:  #FDF8F2; --sand:  #FAF0E0;
-      --white:  #FFFFFF; --ink:   #2C2C2C;
-      --mid:    #5A5A5A; --light: #8A96A8;
+      --teal:    #00A896;
+      --teal-dk: #008F7E;
+      --coral:   #E8603A;
+      --coral-dk:#CC4F2B;
+      --sun:     #F4C430;
+      --navy:    #1A2E4A;
+      --mid:     #4A5A6A;
+      --light:   #8A9AB0;
+      --white:   #FFFFFF;
+      --offwhite:#F5F9F8;
+      --sun-bg:  #FEF8E1;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
-
-    .top-bar { background: var(--blue-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
-    .top-bar a, .top-bar span { font-size: 0.78rem; color: rgba(255,255,255,0.82); text-decoration: none; }
-    .top-bar a:hover { color: white; }
-
-    .site-header { background: var(--blue); padding: 1rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-bottom: 4px solid var(--orange); }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
+    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
+    .top-bar a { color: white; font-weight: 600; text-decoration: none; }
+    .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
+    .header-logo { padding-bottom: 0.5rem; }
     .header-logo img { height: 120px; display: block; }
-    .header-center { text-align: center; flex: 1; }
-    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.3rem,2.5vw,2rem); font-weight: 900; font-style: italic; color: white; }
-    .header-sub { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 0.2rem; }
-    .header-right { text-align: right; font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.7; }
-    .header-right a { color: var(--sand); font-weight: 700; text-decoration: none; }
-
-    .main-nav { background: var(--blue); padding: 0 4vw; display: flex; align-items: center; position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 16px rgba(54,90,162,0.3); border-top: 1px solid rgba(255,255,255,0.1); overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .main-nav::-webkit-scrollbar { display: none; }
-    .main-nav a { display: block; text-decoration: none; color: rgba(255,255,255,0.88); font-family: 'Nunito', sans-serif; font-size: 0.83rem; font-weight: 700; padding: 0.8rem 0.85rem; transition: background 0.2s; white-space: nowrap; }
-    .main-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
-    .main-nav a.active { color: white; background: var(--orange); }
-    .main-nav a.cta { background: var(--orange); color: white; margin-left: auto; }
-    .main-nav a.cta:hover { background: var(--orange-dk); }
-
-    .colour-band { display: flex; height: 6px; }
-    .colour-band span { flex: 1; }
-
+    .header-right { padding-bottom: 1rem; }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+    .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.45rem 1.1rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
+    .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
     .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
-    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.3rem); font-weight: 900; color: var(--ink); margin-bottom: 1rem; line-height: 1.2; }
-
-    .btn-orange { background: var(--orange); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-orange:hover { background: var(--orange-dk); transform: translateY(-2px); }
-    .btn-outline-wh { background: transparent; color: white; padding: 0.85rem 2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.92rem; transition: all 0.2s; display: inline-block; }
-    .btn-outline-wh:hover { border-color: white; background: rgba(255,255,255,0.1); }
-    .btn-teal { background: var(--teal); color: white; padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-teal:hover { background: #1A8070; transform: translateY(-2px); }
-    .btn-wh { background: white; color: var(--blue); padding: 0.85rem 2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-wh:hover { background: var(--sand); }
-    .btn-clear-wh { background: transparent; color: white; padding: 0.85rem 2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.92rem; transition: all 0.2s; display: inline-block; }
-    .btn-clear-wh:hover { border-color: white; }
-
+    .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+    .btn-coral { background: var(--coral); color: white; padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-coral:hover { background: var(--coral-dk); transform: translateY(-2px); }
+    .btn-wh { background: white; color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 50px; text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-wh:hover { background: var(--sun-bg); transform: translateY(-2px); }
+    .btn-wh-outline { background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.5); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+    .btn-wh-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
+    .page-hero { height: 52vh; min-height: 320px; position: relative; overflow: hidden; background: var(--navy); }
+    .page-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; z-index: 0; }
+    .page-hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(26,46,74,0.25), rgba(26,46,74,0.65)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .pg-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 0.8rem; }
+    .page-hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 900; color: white; line-height: 1.15; max-width: 640px; margin-bottom: 0.8rem; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.78); max-width: 500px; line-height: 1.7; font-weight: 300; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; text-decoration: none; }
+    .f-logo span { color: var(--sun); }
+    .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a:hover { color: white; }
+    .f-copy { font-size: 0.78rem; }
+    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 90px; } }
+    @media (max-width: 600px) { .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
     .page-hero { position: relative; height: 48vh; min-height: 300px; overflow: hidden; background: var(--blue); }
     .page-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 0; }
     .page-hero-ov { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(54,90,162,0.35), rgba(54,90,162,0.75)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
@@ -121,20 +121,23 @@
 </head>
 <body>
 <div class="top-bar">
-  <span>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi</span>
-  <span>Mon to Sun 9:00 AM to 7:00 PM</span>
-  <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a>
-  <a href="tel:+254768199515">+254 768 199 515</a>
+  <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
 </div>
 <div class="site-header">
   <div class="header-logo"><a href="index.html"><img src="logo.png" alt="Neuronest" /></a></div>
-  <div class="header-center">
-    <div class="header-tagline">Welcome to Neuronest!</div>
-    <div class="header-sub">A safe and joyful place for every child to just be</div>
-  </div>
   <div class="header-right">
-    <strong style="color:white;">Open today</strong><br>9:00 AM to 7:00 PM<br>
-    <a href="tel:+254768199515">+254 768 199 515</a>
+    <div class="header-tagline">Embracing Every Mind!</div>
+    <ul class="nav-pills">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">Our Story</a></li>
+      <li><a href="open-play.html">Open Play</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="space.html">The Space</a></li>
+      <li><a href="therapists.html">For Therapists</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="#find-us">Contact</a></li>
+    </ul>
   </div>
 </div>
 <nav class="main-nav"><a href="index.html">Home</a><a href="about.html" class="active">Our Story</a><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a><a href="space.html">The Space</a><a href="gallery.html">Gallery</a><a href="therapists.html">For Therapists</a><a href="social-story.html">Social Story</a><a href="index.html#find-us" class="cta">Visit Us</a></nav>
@@ -255,14 +258,14 @@
   <a href="index.html#find-us" class="btn-clear-wh">Visit Us</a>
 </div>
 <footer>
-  <a href="index.html" class="f-logo">Neuronest</a>
+  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
     <li><a href="open-play.html">Open Play</a></li>
     <li><a href="programs.html">Programs</a></li>
     <li><a href="space.html">The Space</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="social-story.html">Social Story</a></li>
   </ul>
   <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
