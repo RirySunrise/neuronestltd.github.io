@@ -30,7 +30,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
 
-    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar { background: var(--navy); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
     .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
     .top-bar a { color: white; font-weight: 600; text-decoration: none; }
 
@@ -44,6 +44,12 @@
     .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.45rem 1.1rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
     .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
     .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
+    .nav-drop { position: relative; display: inline-block; }
+    .nav-drop > a::after { content: ' \25BE'; font-size: 0.7rem; margin-left: 0.2rem; }
+    .drop-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0.4rem; background: var(--navy); border-radius: 14px; padding: 0.4rem; min-width: 170px; z-index: 50; box-shadow: 0 12px 32px rgba(26,46,74,0.25); }
+    .nav-drop:hover .drop-menu { display: block; }
+    .drop-menu a { display: block; padding: 0.55rem 1rem; border-radius: 8px; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; white-space: nowrap; border: none; }
+    .drop-menu a:hover { background: var(--teal); }
 
     .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
     .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
@@ -138,8 +144,7 @@
     <ul class="nav-pills">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Our Story</a></li>
-      <li><a href="open-play.html">Open Play</a></li>
-      <li><a href="programs.html">Programs</a></li>
+      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
       <li><a href="space.html">The Space</a></li>
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="gallery.html" class="active">Gallery</a></li>
@@ -179,8 +184,7 @@
   <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
-    <li><a href="open-play.html">Open Play</a></li>
-    <li><a href="programs.html">Programs</a></li>
+      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
     <li><a href="space.html">The Space</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
     <li><a href="gallery.html">Gallery</a></li>

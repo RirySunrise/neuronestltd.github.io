@@ -30,7 +30,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
 
-    .top-bar { background: var(--teal-dk); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar { background: var(--navy); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
     .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
     .top-bar a { color: white; font-weight: 600; text-decoration: none; }
 
@@ -44,6 +44,12 @@
     .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.45rem 1.1rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
     .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
     .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
+    .nav-drop { position: relative; display: inline-block; }
+    .nav-drop > a::after { content: ' \25BE'; font-size: 0.7rem; margin-left: 0.2rem; }
+    .drop-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0.4rem; background: var(--navy); border-radius: 14px; padding: 0.4rem; min-width: 170px; z-index: 50; box-shadow: 0 12px 32px rgba(26,46,74,0.25); }
+    .nav-drop:hover .drop-menu { display: block; }
+    .drop-menu a { display: block; padding: 0.55rem 1rem; border-radius: 8px; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; white-space: nowrap; border: none; }
+    .drop-menu a:hover { background: var(--teal); }
 
     .sec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 700; margin-bottom: 0.4rem; display: block; }
     .sec-title { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
@@ -131,9 +137,8 @@
     .rule-card h3 { font-family: 'Nunito', sans-serif; font-size: 0.98rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
     .rule-card p { font-size: 0.83rem; line-height: 1.65; color: var(--mid); }
     .rule-note { display: block; margin-top: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--teal); }
-    .close-banner { background: var(--navy); border-radius: 24px; padding: 3rem; text-align: center; }
+    .close-banner { background: linear-gradient(135deg, var(--navy) 0%, #24405F 100%); border-radius: 24px; padding: 3rem; text-align: center; }
     .close-banner p { font-family: 'Nunito', sans-serif; font-size: clamp(1rem,2vw,1.25rem); font-weight: 800; color: white; line-height: 1.55; margin-bottom: 1.5rem; }
-    .close-banner p span { color: var(--sun); }
     @media (max-width: 900px) { .rules-grid { grid-template-columns: 1fr; } .pricing-strip { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .content { padding: 3.5rem 5vw; } .rules-intro, .close-banner { padding: 2rem; } }
   </style>
@@ -149,8 +154,7 @@
     <ul class="nav-pills">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Our Story</a></li>
-      <li><a href="open-play.html" class="active">Open Play</a></li>
-      <li><a href="programs.html">Programs</a></li>
+      <li class="nav-drop"><a href="open-play.html" class="active">Open Play</a><div class="drop-menu"><a href="open-play.html" class="active">Open Play</a><a href="programs.html">Programs</a></div></li>
       <li><a href="space.html">The Space</a></li>
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="gallery.html">Gallery</a></li>
@@ -178,7 +182,7 @@
     <div class="price-box"><h3>Weekdays</h3><div class="amount">KES 1,000</div><div class="sub">per child &nbsp; 3 hour session</div></div>
     <div class="price-box"><h3>Weekends</h3><div class="amount">KES 1,500</div><div class="sub">per child &nbsp; 3 hour session</div></div>
   </div>
-  <div class="info-note">We accept M PESA (Paybill 542542), bank transfer and card payments. Accompanying adults enter free. No cash policy. Grip socks are required for entry and are available for purchase at the front desk.</div>
+  <div class="info-note">We accept M-PESA, bank transfer and card payments. Accompanying adults enter free. No cash policy. Grip socks are required for entry and are available for purchase at the front desk.</div>
   <div class="block-title">Important Notes</div>
   <ul class="notes-list">
     <li>Open Play gives access to the playground only. Therapy suites are separate and bookable independently.</li>
@@ -206,7 +210,7 @@
   <div class="block-title">Photography and Videography</div>
   <div class="info-note" style="margin-bottom:3.5rem;">To protect the privacy of all children at Neuronest, photography and videography requires consent, even when photographing your own child. Please ask permission from any parent or guardian before taking photos or videos that may include other children. If you would like to photograph or record your child, please be mindful of others in the space and avoid capturing other children without consent. Neuronest may photograph or record activities for use on our website and social media. If you prefer your child not to be included, please let us know at the front desk on arrival.</div>
   <div class="close-banner">
-    <p>Thank you for helping make Neuronest a <span>warm, inclusive, and joyful</span> place for every child and every family.</p>
+    <p>Thank you for helping make Neuronest a warm, inclusive, and joyful place for every child and every family.</p>
     <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Plan Your Visit</a>
   </div>
 </div>
@@ -214,8 +218,7 @@
   <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
-    <li><a href="open-play.html">Open Play</a></li>
-    <li><a href="programs.html">Programs</a></li>
+      <li class="nav-drop"><a href="open-play.html" class="active">Open Play</a><div class="drop-menu"><a href="open-play.html" class="active">Open Play</a><a href="programs.html">Programs</a></div></li>
     <li><a href="space.html">The Space</a></li>
     <li><a href="therapists.html">For Therapists</a></li>
     <li><a href="gallery.html">Gallery</a></li>
