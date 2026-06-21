@@ -38,8 +38,8 @@
     .top-bar a { color: white; font-weight: 600; text-decoration: none; }
 
     .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
-    .header-logo { padding-bottom: 0.5rem; }
-    .header-logo img { height: 120px; display: block; }
+    .header-logo { padding-bottom: 0.5rem; background: white; border-radius: 18px; padding: 0.7rem 1.2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .header-logo img { height: 100px; display: block; }
     .header-right { padding-bottom: 1rem; }
     .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
 
@@ -147,11 +147,9 @@
     <ul class="nav-pills">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Our Story</a></li>
-      <li><a href="open-play.html">Open Play</a></li>
-    <li><a href="programs.html">Programs</a></li>
-    <li><a href="space.html">The Space</a></li>
+      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
+      <li class="nav-drop"><a href="space.html" class="active">Gallery</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html" class="active">Gallery</a></div></li>
       <li><a href="therapists.html">For Therapists</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
       <li><a href="index.html#find-us">Contact</a></li>

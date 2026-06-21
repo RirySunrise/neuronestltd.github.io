@@ -38,8 +38,8 @@
     .top-bar a { color: white; font-weight: 600; text-decoration: none; }
 
     .site-header { background: var(--teal); padding: 1rem 5vw 0; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
-    .header-logo { padding-bottom: 0.5rem; }
-    .header-logo img { height: 120px; display: block; }
+    .header-logo { padding-bottom: 0.5rem; background: white; border-radius: 18px; padding: 0.7rem 1.2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .header-logo img { height: 100px; display: block; }
     .header-right { padding-bottom: 1rem; }
     .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 1.2rem; line-height: 1.2; }
 
@@ -140,13 +140,11 @@
     .who-photo { border-radius: 24px; overflow: hidden; }
     .who-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
     .who-text h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 900; color: var(--navy); margin-bottom: 1.4rem; line-height: 1.2; }
-    .who-text h2 span { color: var(--teal); }
     .who-text p { font-size: 0.95rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-bottom: 1.1rem; }
     .who-text p strong { color: var(--navy); font-weight: 700; }
     .story-quote { background: var(--offwhite); padding: 4rem 6vw; text-align: center; }
     .quote-mark { font-family: 'Nunito', sans-serif; font-size: 5.5rem; font-weight: 900; color: var(--teal); opacity: 0.18; line-height: 0.5; margin-bottom: 1.5rem; display: block; }
     .story-quote blockquote { font-family: 'Nunito', sans-serif; font-size: clamp(1.1rem,2.2vw,1.6rem); font-weight: 800; color: var(--navy); max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.5; }
-    .story-quote blockquote span { color: var(--teal); }
     .quote-attr { font-size: 0.8rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
     .built { padding: 4rem 6vw; background: var(--white); }
     .built-inner { max-width: 1100px; margin: 0 auto; }
@@ -157,7 +155,6 @@
     .built-item:nth-child(3n+3) { border-left-color: var(--sun); }
     .bigger { background: var(--teal); padding: 4rem 6vw; text-align: center; }
     .bigger h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 900; color: white; margin-bottom: 1.2rem; }
-    .bigger h2 span { color: var(--sun); }
     .bigger p { font-size: 0.95rem; line-height: 1.9; color: rgba(255,255,255,0.85); font-weight: 300; max-width: 660px; margin: 0 auto 1.3rem; }
     .bigger p:last-of-type { margin-bottom: 2.5rem; }
     @media (max-width: 900px) {
@@ -184,11 +181,9 @@
     <ul class="nav-pills">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">Our Story</a></li>
-      <li><a href="open-play.html">Open Play</a></li>
-    <li><a href="programs.html">Programs</a></li>
-    <li><a href="space.html">The Space</a></li>
+      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
+      <li class="nav-drop"><a href="space.html">The Space &amp; Gallery</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a></div></li>
       <li><a href="therapists.html">For Therapists</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
       <li><a href="index.html#find-us">Contact</a></li>
@@ -254,7 +249,7 @@
   <div class="who-inner">
     <div class="who-photo"><img src="reception.jpeg" alt="Neuronest reception" /></div>
     <div class="who-text">
-      <h2>Who we are and <span>why we exist</span></h2>
+      <h2>Who we are and why we exist</h2>
       <p>Neuronest was founded by a family with lived experience of raising a neurodivergent child. Finding a play space that truly understood their child, one designed for them rather than just tolerant of them, proved almost impossible in Nairobi.</p>
       <p>After being asked to leave a play area within thirty minutes, and watching their child retreat to the quietest corner of another space just to cope, the decision was made: <strong>build what does not exist.</strong></p>
       <p>For a full year, the founding family consulted occupational therapists, speech therapists, behavioural specialists, and early childhood development experts. Neuronest opened in January 2026, a space built from lived experience rather than good intentions.</p>
@@ -264,7 +259,7 @@
 
 <div class="story-quote">
   <span class="quote-mark">"</span>
-  <blockquote>We want every parent who walks through that door to feel like they have arrived. Like someone finally knows what they have been through. And like their child is <span>safe here, truly safe.</span></blockquote>
+  <blockquote>We want every parent who walks through that door to feel like they have arrived. Like someone finally knows what they have been through. And like their child is safe here, truly safe.</blockquote>
   <div class="quote-attr">The Neuronest Founding Family</div>
 </div>
 
@@ -286,7 +281,7 @@
 </div>
 
 <div class="bigger">
-  <h2>The play area is just <span>the beginning</span></h2>
+  <h2>The play area is just the beginning</h2>
   <p>We are building a full ecosystem of support for neurodivergent children and their families, including access for families who cannot afford market rates.</p>
   <p>When typical children grow up playing alongside neurodivergent children, understanding grows and fear does not. Inclusion shapes the adults those children become and the society we all share. That work starts here.</p>
   <a href="programs.html" class="btn-wh">View Our Programs</a>
