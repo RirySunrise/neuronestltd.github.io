@@ -133,15 +133,17 @@
     }
     .no-events p { font-size: 0.95rem; color: var(--mid); line-height: 1.8; max-width: 480px; margin: 0 auto 1.5rem; }
 
-    /* PAST EVENTS GALLERY */
+    /* PAST EVENTS */
     .past-events { background: var(--offwhite); padding: 4.5rem 6vw; }
-    .past-inner { max-width: 1100px; margin: 0 auto; }
-    .past-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 2rem; }
-    .past-item { border-radius: 16px; overflow: hidden; position: relative; height: 240px; }
-    .past-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
-    .past-item:hover img { transform: scale(1.05); }
-    .past-cap { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(26,46,74,0.82)); color: white; padding: 1.5rem 1rem 0.9rem; }
-    .past-cap span { font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; }
+    .past-inner { max-width: 1000px; margin: 0 auto; }
+    .past-featured { display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem; margin-top: 2rem; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(26,46,74,0.08); }
+    .past-featured-img { overflow: hidden; }
+    .past-featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .past-featured-info { padding: 2rem 2rem 2rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .past-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--coral); margin-bottom: 0.6rem; }
+    .past-featured-info h3 { font-family: 'Nunito', sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--navy); margin-bottom: 0.8rem; }
+    .past-featured-info p { font-size: 0.88rem; color: var(--mid); line-height: 1.75; margin-bottom: 1rem; }
+    .past-meta { font-size: 0.78rem; color: var(--light); font-weight: 600; }
 
     /* CTA */
     .events-cta { background: var(--teal); padding: 4rem 6vw; text-align: center; }
@@ -163,12 +165,13 @@
     @media (max-width: 700px) {
       .event-card { grid-template-columns: 1fr; text-align: center; }
       .event-date { justify-self: center; width: 90px; }
-      .past-grid { grid-template-columns: 1fr 1fr; }
+      .past-featured { grid-template-columns: 1fr; }
+      .past-featured-img { height: 240px; }
+      .past-featured-info { padding: 1.5rem; }
     }
     @media (max-width: 600px) {
       .nav-pills { justify-content: center; }
       .top-bar { justify-content: center; }
-      .past-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -236,11 +239,17 @@
 <div class="past-events">
   <div class="past-inner">
     <span class="sec-label">Past Events</span>
-    <div class="sec-title">Moments from Neuronest</div>
-    <div class="past-grid">
-      <div class="past-item"><img src="main_play_2.jpeg" alt="Family play day" /><div class="past-cap"><span>Family Play Day</span></div></div>
-      <div class="past-item"><img src="craft_table.jpeg" alt="Sensory craft session" /><div class="past-cap"><span>Sensory Craft Session</span></div></div>
-      <div class="past-item"><img src="balance_stones.jpeg" alt="Movement and balance activities" /><div class="past-cap"><span>Movement and Balance</span></div></div>
+    <div class="sec-title">Events we have hosted</div>
+    <div class="past-featured">
+      <div class="past-featured-img">
+        <img src="April_Week_2_Nest_Play_Series.png" alt="The Nest Play Series April 2026" />
+      </div>
+      <div class="past-featured-info">
+        <div class="past-tag">April 2026</div>
+        <h3>The Nest Play Series</h3>
+        <p>Three days of structured but flexible play for children aged 3 to 11. Each day brought a different theme, from Mindful Art and Sensory Play, to Crafts, Music and Movement, to a closing celebration with certificates for every child who attended.</p>
+        <div class="past-meta">21st to 23rd April 2026 &nbsp;·&nbsp; 10:00 AM to 3:00 PM each day</div>
+      </div>
     </div>
   </div>
 </div>
