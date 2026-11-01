@@ -6,11 +6,11 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Events | Neuronest | Inclusive Play Space Nairobi</title>
+  <title>Events | NeuroNest | Inclusive Play Space Nairobi</title>
   <meta name="description" content="Upcoming events and past gatherings at Neuronest, Westlands Nairobi. Sensory friendly events for neurodivergent children and their families." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.neuronestltd.com/events.html" />
-  <meta property="og:title" content="Events | Neuronest | Inclusive Play Space Nairobi" />
+  <meta property="og:title" content="Events | NeuroNest | Inclusive Play Space Nairobi" />
   <meta property="og:image" content="https://www.neuronestltd.com/main_play_2.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -185,8 +185,31 @@
       .top-bar { justify-content: center; }
     }
   </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
 <div class="top-bar">
   <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
 </div>
@@ -202,6 +225,7 @@
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="events.html" class="active">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="index.html#find-us">Contact</a></li>
     </ul>
   </div>
@@ -211,7 +235,7 @@
   <img src="main_play_2.jpeg" alt="Events at Neuronest" />
   <div class="page-hero-ov">
     <div class="pg-eyebrow">Events</div>
-    <h1>Events at Neuronest</h1>
+    <h1>Events at NeuroNest</h1>
     <p>Play days, parent talks, and community gatherings at our space in Westlands.</p>
   </div>
 </div>
@@ -227,8 +251,8 @@
       <div class="month">Nov</div>
     </div>
     <div class="event-info">
-      <h3>Nest Play Series: Season 3, November Holiday Edition</h3>
-      <p>Four days of play for children aged 3 to 11. Theme is Explore, Create, Move and Grow. Activities across the four days include Creative Art and Painting, Fun Crafts, Sensory Play, Music and Dance, and Building and Creative Play. Sessions run 10:00 AM to 3:00 PM each day.</p>
+      <h3>Nest Play Series: Season 2, November Holiday Edition</h3>
+      <p>Four days of play for children aged 2 to 12. Theme is Explore, Create, Move and Grow. Activities across the four days include Creative Art and Painting, Fun Crafts, Sensory Play, Music and Dance, and Building and Creative Play. Sessions run 10:00 AM to 3:00 PM each day.</p>
       <div class="event-meta"><span>10th to 13th November 2026 &nbsp;·&nbsp; 10:00 AM to 3:00 PM</span><span>NeuroNest, Kenrail Towers, M3 Southern Wing, Westlands</span></div>
       <ul class="event-pricing">
         <li><strong>Fee:</strong> KES 1,200 per day</li>
@@ -243,8 +267,8 @@
   <div class="event-card">
     <div class="event-date"><div class="day" style="font-size:1.3rem;">8–11</div><div class="month">Dec</div></div>
     <div class="event-info">
-      <h3>Nest Play Series: Season 2</h3>
-      <p>The December school holidays edition of the Nest Play Series. Same four-day format, same daily themes: Creative Art, Craft and Making, Sensory Play, and Music and Movement. For children aged 3 to 11, 10:00 AM to 3:00 PM each day.</p>
+      <h3>Nest Play Series: Season 3</h3>
+      <p>The December school holidays edition of the Nest Play Series. Same four-day format, same daily themes: Creative Art, Craft and Making, Sensory Play, and Music and Movement. For children aged 2 to 12, 10:00 AM to 3:00 PM each day.</p>
       <div class="event-meta"><span>8th to 11th December 2026 &nbsp;·&nbsp; 10:00 AM to 3:00 PM</span><span>NeuroNest, Kenrail Towers, M3 Southern Wing, Westlands</span></div>
       <ul class="event-pricing">
         <li><strong>Fee:</strong> KES 1,200 per day</li>
@@ -303,7 +327,7 @@
       <div class="past-featured-info">
         <div class="past-tag">April 2026</div>
         <h3>The Nest Play Series</h3>
-        <p>Three days of structured play for children aged 3 to 11. Each day had a different theme, from Mindful Art and Sensory Play, to Crafts, Music and Movement, to a closing celebration with certificates for every child who attended.</p>
+        <p>Three days of structured play for children aged 2 to 12. Each day had a different theme, from Mindful Art and Sensory Play, to Crafts, Music and Movement, to a closing celebration with certificates for every child who attended.</p>
         <div class="past-meta">21st to 23rd April 2026 &nbsp;·&nbsp; 10:00 AM to 3:00 PM each day</div>
       </div>
     </div>
@@ -313,12 +337,12 @@
 
 <div class="events-cta">
   <h2>Want to host or suggest an event?</h2>
-  <p>If you have an idea for a family event, support group, or community gathering at Neuronest, we would love to hear from you.</p>
+  <p>If you have an idea for a family event, support group, or community gathering at NeuroNest, we would love to hear from you.</p>
   <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Get in Touch</a>
 </div>
 
 <footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
     <li><a href="open-play.html">Open Play</a></li>
@@ -328,8 +352,51 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
   </ul>
-  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
 </footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
 </body>
 </html>

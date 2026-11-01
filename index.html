@@ -6,8 +6,8 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Neuronest | Inclusive Play Space for Neurodivergent Children</title>
-  <meta name="description" content="An indoor play and therapy space designed for neurodivergent children. Westlands, Nairobi. Open daily 9AM to 7PM." />
+  <title>NeuroNest Kenya | Sensory-Friendly Play Space in Nairobi</title>
+  <meta name="description" content="NeuroNest is a sensory-friendly indoor play and therapy space in Westlands, Nairobi for neurodivergent children, their siblings and families. Open daily." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -61,8 +61,8 @@
     .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(26,46,74,0.25) 0%, rgba(26,46,74,0.62) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
     .hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 900; color: white; line-height: 1.12; max-width: 720px; margin-bottom: 1rem; }
     .hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.82); margin-bottom: 2.5rem; letter-spacing: 0.04em; font-weight: 300; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-    .open-badge { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; background: white; border-radius: 50px; padding: 0.55rem 1.5rem; display: inline-flex; align-items: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: nowrap; justify-content: center; align-items: center; }
+    .open-badge { background: white; border-radius: 50px; padding: 0.55rem 1.5rem; display: inline-flex; align-items: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-top: 1.2rem; }
     .open-dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; animation: blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
     .open-badge span { font-family: 'Nunito', sans-serif; font-size: 0.82rem; font-weight: 800; color: var(--navy); white-space: nowrap; }
@@ -72,7 +72,22 @@
     .photo-strip div:hover img { transform: scale(1.04); }
     .tagline-band { background: var(--navy); padding: 2.2rem 6vw; text-align: center; }
     .tagline-band h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.2rem,2.5vw,1.7rem); font-weight: 800; color: white; line-height: 1.5; }
-    .services { padding: 5rem 6vw; background: var(--offwhite); }
+    /* WHO WE SUPPORT */
+    .who-section { background: white; padding: 5rem 6vw; }
+    .who-inner { max-width: 900px; margin: 0 auto; }
+    .who-intro { color: var(--mid); font-size: 0.95rem; line-height: 1.75; margin-bottom: 2rem; }
+    .who-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 2rem; }
+    .who-item { background: var(--offwhite); border-left: 3px solid var(--teal); padding: 0.75rem 1rem; border-radius: 0 10px 10px 0; font-size: 0.88rem; color: var(--navy); font-weight: 600; }
+    .who-note { background: var(--navy); color: white; padding: 1.2rem 1.6rem; border-radius: 14px; font-size: 0.9rem; line-height: 1.7; font-weight: 500; }
+    /* SOCIAL STORY BAND */
+    .social-story-band { background: var(--offwhite); padding: 4.5rem 6vw; }
+    .ss-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+    .ss-text h2 { font-family: 'Nunito', sans-serif; font-size: clamp(1.3rem,2.5vw,1.9rem); font-weight: 900; color: var(--navy); margin-bottom: 0.8rem; }
+    .ss-text p { font-size: 0.92rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.5rem; max-width: 500px; }
+    .ss-img { width: 220px; height: 220px; border-radius: 20px; overflow: hidden; flex-shrink: 0; }
+    .ss-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; } .ss-inner { grid-template-columns: 1fr; } .ss-img { width: 100%; height: 180px; } }
+    /* SERVICES */
     .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; }
     .svc-card { border-radius: 20px; overflow: hidden; background: white; text-decoration: none; color: inherit; display: block; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(26,46,74,0.06); }
     .svc-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(26,46,74,0.12); }
@@ -122,9 +137,42 @@
     .f-copy { font-size: 0.78rem; }
     @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 65px; } .services-grid { grid-template-columns: 1fr 1fr; } .find-us-inner { grid-template-columns: 1fr; gap: 3rem; } .photo-strip { height: 200px; } .t-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } .photo-strip { grid-template-columns: 1fr; height: auto; } .photo-strip div { height: 200px; } .price-cards { flex-direction: column; align-items: center; } .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
+    /* TRUST BAR */
+    .trust-bar { background: var(--teal); padding: 1.1rem 5vw; }
+    .trust-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 0.6rem 2.5rem; justify-content: center; align-items: center; }
+    .trust-item { color: white; font-size: 0.8rem; font-weight: 600; font-family: 'Nunito', sans-serif; display: flex; align-items: center; gap: 0.5rem; }
+    .trust-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sun); flex-shrink: 0; }
+    /* FAQ TEASER */
+    .faq-teaser { background: var(--offwhite); padding: 4rem 6vw; text-align: center; }
+    .faq-teaser p { max-width: 520px; margin: 0.5rem auto 2rem; font-size: 0.93rem; color: var(--mid); line-height: 1.75; }
+    /* SERVICE LABELS */
+    .svc-tag { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); font-weight: 700; margin-bottom: 0.3rem; display: block; }
   </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
 
 <div class="top-bar">
   <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
@@ -132,7 +180,7 @@
 
 <div class="site-header">
   <div class="header-logo">
-    <a href="index.html"><img src="logo.png" alt="Neuronest" /></a>
+    <a href="index.html"><img src="logo.png" alt="NeuroNest" /></a>
   </div>
   <div class="header-right">
     <div class="header-tagline">Embracing Every Mind!</div>
@@ -144,31 +192,44 @@
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="#find-us">Contact</a></li>
     </ul>
   </div>
 </div>
 
 <div class="hero">
-  <img src="entrance_new.jpeg" alt="Neuronest entrance in Westlands Nairobi" />
+  <img src="entrance_new.jpeg" alt="NeuroNest entrance in Westlands Nairobi" />
   <div class="hero-overlay">
-    <h1>A safe and inclusive place for your child to just be</h1>
-    <p class="hero-sub">Westlands, Nairobi &nbsp;&nbsp; Ages 2 to 14 &nbsp;&nbsp; Open every day</p>
+    <h1>Kenya's sensory-friendly play and therapy space for neurodivergent children</h1>
+    <p class="hero-sub">An inclusive indoor play and therapy space in Westlands where neurodivergent children can play freely alongside their siblings, friends and caregivers.</p>
     <div class="hero-btns">
-      <a href="open-play.html" class="btn-coral">Open Play Info</a>
-      <a href="about.html" class="btn-wh">Our Story</a>
+      <a href="open-play.html" class="btn-coral">Plan Your Visit</a>
+      <a href="https://wa.me/254768199515" target="_blank" class="btn-wh">WhatsApp Us</a>
+      <a href="space.html" class="btn-wh-outline">View Our Space</a>
     </div>
-  </div>
-  <div class="open-badge">
-    <div class="open-dot"></div>
-    <span>Open today &nbsp; 9:00 AM to 7:00 PM</span>
+    <div class="open-badge">
+      <div class="open-dot"></div>
+      <span>Open today &nbsp; 9:00 AM to 7:00 PM</span>
+    </div>
   </div>
 </div>
 
 <div class="photo-strip">
-  <div><img src="main_play_2.jpeg" alt="Sensory swings at Neuronest" /></div>
+  <div><img src="main_play_2.jpeg" alt="Sensory swings at NeuroNest" /></div>
   <div><img src="sensory_section.jpeg" alt="Sensory wall and creative table" /></div>
-  <div><img src="quiet_room.jpeg" alt="Quiet Room at Neuronest" /></div>
+  <div><img src="quiet_room.jpeg" alt="Quiet Room at NeuroNest" /></div>
+</div>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">No booking needed, walk-ins always welcome</div>
+    <div class="trust-item">Parents welcome to stay on the floor</div>
+    <div class="trust-item">On-site OT and speech therapy suites</div>
+    <div class="trust-item">Siblings and friends welcome</div>
+    <div class="trust-item">Birthday parties and school visits available</div>
+    <div class="trust-item">Open daily 9AM to 7PM</div>
+  </div>
 </div>
 
 <div class="tagline-band">
@@ -176,14 +237,47 @@
   <p style="font-size:0.92rem; color:rgba(255,255,255,0.65); font-weight:300; max-width:560px; margin:1rem auto 0;">Built primarily for neurodivergent children, and just as welcoming to their siblings and friends. Every family plays together here.</p>
 </div>
 
-<div class="services">
+<div class="who-section">
+  <div class="who-inner">
+    <span class="sec-label">Who we support</span>
+    <div class="sec-title">Is NeuroNest right for my child?</div>
+    <p class="who-intro">NeuroNest is designed for children aged 2 to 12 who need a thoughtful, lower-stimulation environment to play and grow. Children who may enjoy it include those who:</p>
+    <div class="who-grid">
+      <div class="who-item">Are autistic or have ADHD</div>
+      <div class="who-item">Have sensory processing differences</div>
+      <div class="who-item">Prefer calmer, less crowded play environments</div>
+      <div class="who-item">Need structured or supported play</div>
+      <div class="who-item">Feel overwhelmed in typical play spaces</div>
+      <div class="who-item">Are preparing for mainstream school</div>
+      <div class="who-item">Benefit from OT or speech support</div>
+      <div class="who-item">Simply need more space and patience to play</div>
+    </div>
+    <p class="who-note">You do not need a diagnosis to visit. If your child needs a thoughtful, inclusive play environment, your family is welcome here. We also accommodate children with other additional needs, including Down Syndrome, cerebral palsy and other physical or developmental differences.</p>
+  </div>
+</div>
+
+<div class="social-story-band">
+  <div class="ss-inner">
+    <div class="ss-text">
+      <span class="sec-label" style="color:var(--teal);">Social Story</span>
+      <h2>Help your child know what to expect before you arrive</h2>
+      <p>Some children feel more settled when they can picture the visit ahead of time. Our Social Story walks your child through exactly what will happen from the moment you arrive.</p>
+      <a href="social-story.html" class="btn-coral">Read the Social Story</a>
+    </div>
+    <div class="ss-img">
+      <img src="quiet_room.jpeg" alt="The calm room at NeuroNest" />
+    </div>
+  </div>
+</div>
+
+<div class="services" style="padding: 5rem 6vw; background: var(--sun-bg);">
   <span class="sec-label">What We Offer</span>
-  <div class="sec-title">Everything in one place</div>
+  <div class="sec-title">The right support for where your child is</div>
   <div class="services-grid">
-    <a href="open-play.html" class="svc-card"><div class="svc-img"><img src="main_play_2.jpeg" alt="Open Play" /></div><div class="svc-body"><h3>Open Play</h3><p>Walk in any day. A safe, sensory friendly space to explore freely.</p><span class="svc-link">Learn more</span></div></a>
-    <a href="programs.html#preschool" class="svc-card"><div class="svc-img"><img src="sensory_section.jpeg" alt="Preschool Readiness Program" /></div><div class="svc-body"><h3>Preschool Readiness</h3><p>Preparing children for school through specialist led play.</p><span class="svc-link">Learn more</span></div></a>
-    <a href="programs.html#therapy" class="svc-card"><div class="svc-img"><img src="parents_waiting.jpeg" alt="Therapy Sessions" /></div><div class="svc-body"><h3>Therapy Sessions</h3><p>OT, speech therapy and more. All on site.</p><span class="svc-link">Learn more</span></div></a>
-    <a href="programs.html#membership" class="svc-card"><div class="svc-img"><img src="main_play_3.jpeg" alt="Memberships" /></div><div class="svc-body"><h3>Memberships</h3><p>Visit often? Save more with our tiered membership options.</p><span class="svc-link">Learn more</span></div></a>
+    <a href="open-play.html" class="svc-card"><div class="svc-img"><img src="main_play_2.jpeg" alt="Open Play" /></div><div class="svc-body"><span class="svc-tag">If your child needs a safe place to play</span><h3>Open Play</h3><p>Walk in any day, no booking needed. A sensory-friendly space to explore freely at your child's own pace.</p><span class="svc-link">Plan your visit</span></div></a>
+    <a href="programs.html#preschool" class="svc-card"><div class="svc-img"><img src="sensory_section.jpeg" alt="Preschool Readiness Program" /></div><div class="svc-body"><span class="svc-tag">If your child is preparing for school</span><h3>Preschool Readiness</h3><p>A specialist-led programme that builds the play, social, and attention skills children need before they start school.</p><span class="svc-link">See the programme</span></div></a>
+    <a href="programs.html#therapy" class="svc-card"><div class="svc-img"><img src="parents_waiting.jpeg" alt="Therapy Sessions" /></div><div class="svc-body"><span class="svc-tag">If your child needs therapeutic support</span><h3>Therapy Sessions</h3><p>Occupational therapy and speech therapy available, delivered by qualified therapists in our on-site suites.</p><span class="svc-link">Meet our therapists</span></div></a>
+    <a href="programs.html#membership" class="svc-card"><div class="svc-img"><img src="main_play_3.jpeg" alt="Memberships" /></div><div class="svc-body"><span class="svc-tag">If you visit regularly</span><h3>Memberships</h3><p>Families who come often save more. Our tiered memberships give you flexible access at a lower cost per session.</p><span class="svc-link">See membership options</span></div></a>
   </div>
 </div>
 
@@ -202,9 +296,22 @@
   <span class="sec-label">What Families Say</span>
   <div class="sec-title">From the people who matter most</div>
   <div class="t-grid">
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>This is actually the place we have been looking for. Well designed to accommodate the needs of our kids, the staff are compassionate and friendly, and they have the best facilities for special kids.</p><div class="t-author">Witness Ivon</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>It was super awesome being in your space. Five stars for sure. The environment feels safe, the team genuinely cares, and my child was at ease from the moment we walked in.</p><div class="t-author">Behavioural Assistant</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest holds a special place in our hearts. I am so grateful for the warm, welcoming space they provide for my son to play, grow, and receive speech therapy. It means so much to see him supported, understood, and celebrated for who he is.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>What stood out for me was the quiet room, a space to regulate. Now that is genius. My kids did not want to go home.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>Previously it had been such an uphill task getting a play space for kids on the spectrum around Nairobi, but NeuroNest just made playtime easy and fun. You can leave your little ones under their care and run errands without worry. It is worth every coin.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest has become a second home for us. My daughter calls it Playschool, and demands to attend at every given opportunity. The staff are incredibly warm and really take time to understand and respond to each child's different needs.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My son genuinely enjoyed himself and kept talking about the activities even after we left. It is beautiful to see a space where children can learn, play, express themselves, and simply feel understood.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>The first ever inclusive play space I have been to. Staff are very friendly and knowledgeable about their craft and their service is top notch. Kids loved it and we have never stopped going back.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest is perfect for my daughter. She especially loves the swings and dark room which she goes to when she is overwhelmed. They also have noise cancelling headphones for sensory avoiders.</p><div class="t-author">NeuroNest Parent</div></div>
+    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My kids love the play and the warmth that the staff have when interacting with them. It is always a hustle getting them out the door when the day is done. I would recommend giving them a try.</p><div class="t-author">NeuroNest Parent</div></div>
   </div>
+</div>
+
+<div class="faq-teaser">
+  <span class="sec-label">Before You Visit</span>
+  <div class="sec-title">Common questions from parents</div>
+  <p>Do you need to book ahead? Can parents stay on the floor? What should your child bring? We have answered the questions we hear most often.</p>
+  <a href="faq.html" class="btn-coral">Read the FAQ</a>
 </div>
 
 <div class="find-us" id="find-us">
@@ -225,12 +332,12 @@
       </div>
       <a href="https://wa.me/254768199515" target="_blank" class="wa-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp Us</a>
     </div>
-    <div class="map-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8080!2d36.8019!3d-1.2641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1f9de7%3A0x2a4f585c27571a81!2sKenrail%20Towers%2C%20Westlands!5e0!3m2!1sen!2ske!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Neuronest location"></iframe></div>
+    <div class="map-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8080!2d36.8019!3d-1.2641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1f9de7%3A0x2a4f585c27571a81!2sKenrail%20Towers%2C%20Westlands!5e0!3m2!1sen!2ske!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NeuroNest location"></iframe></div>
   </div>
 </div>
 
 <footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
       <li><a href="open-play.html">Open Play</a></li>
@@ -240,9 +347,52 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
   </ul>
-  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
 </footer>
 
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
 </body>
 </html>

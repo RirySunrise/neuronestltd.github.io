@@ -6,11 +6,11 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no" />
-  <title>For Therapists | Rent Therapy Space in Nairobi | Neuronest</title>
-  <meta name="description" content="Occupational therapists and speech therapists in Nairobi, rent fully equipped therapy suites at Neuronest, Westlands. Work with neurodivergent children in a purpose-built environment." />
+  <title>For Therapists | Rent Therapy Space in Nairobi | NeuroNest</title>
+  <meta name="description" content="Occupational therapists and speech therapists in Nairobi, rent fully equipped therapy suites at NeuroNest, Westlands. Work with neurodivergent children in a purpose-built environment." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.neuronestltd.com/therapists.html" />
-  <meta property="og:title" content="For Therapists | Rent Therapy Space in Nairobi | Neuronest" />
+  <meta property="og:title" content="For Therapists | Rent Therapy Space in Nairobi | NeuroNest" />
   <meta property="og:image" content="https://www.neuronestltd.com/parents_waiting.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -146,13 +146,36 @@
     .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     @media (max-width: 700px) { .model-grid { grid-template-columns: 1fr; } .pull-block { padding: 1.8rem; } }
   </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
 <div class="top-bar">
   <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
 </div>
 <div class="site-header">
-  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="Neuronest" /></a></div>
+  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="NeuroNest" /></a></div>
   <div class="header-right">
     <div class="header-tagline">Embracing Every Mind!</div>
     <ul class="nav-pills">
@@ -163,26 +186,27 @@
       <li><a href="therapists.html" class="active">For Therapists</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="index.html#find-us">Contact</a></li>
     </ul>
   </div>
 </div>
 <div class="page-hero">
-  <img src="parents_waiting.jpeg" alt="Therapy suite at Neuronest" />
+  <img src="parents_waiting.jpeg" alt="Therapy suite at NeuroNest" />
   <div class="page-hero-ov">
     <div class="pg-eyebrow">For Therapists</div>
     <h1>A space built for the work you do</h1>
-    <p>Neuronest offers fully equipped therapy suites to independent practitioners working with neurodivergent children.</p>
+    <p>NeuroNest offers fully equipped therapy suites to independent practitioners working with neurodivergent children.</p>
   </div>
 </div>
 <div class="t-content">
   <div class="sec-title" style="color:var(--teal);">How it works</div>
-  <p>Neuronest is a combined play and therapy space, and the therapy component only works because of the independent practitioners who bring their expertise here. We provide the space, the environment, and the families. You bring the clinical skill.</p>
+  <p>NeuroNest is a combined play and therapy space, and the therapy component only works because of the independent practitioners who bring their expertise here. We provide the space, the environment, and the families. You bring the clinical skill.</p>
   <p>Our therapy suites are available for rent to independent qualified practitioners. You work with your own clients, on your own schedule, at your own rates. We handle the facility so you can focus entirely on your work with the child.</p>
   <div class="pull-block">
-    <p>Families come to Neuronest for play. When therapy is available in the same building, <em>they do not have to choose.</em> That makes your services more accessible and more likely to be used consistently.</p>
+    <p>Families come to NeuroNest for play. When therapy is available in the same building, <em>they do not have to choose.</em> That makes your services more accessible and more likely to be used consistently.</p>
   </div>
-  <div class="t-h2">Why Neuronest works for practitioners</div>
+  <div class="t-h2">Why NeuroNest works for practitioners</div>
   <div class="model-grid">
     <div class="model-card"><h3>Fully equipped rooms</h3><p>Our therapy suites are set up and ready to use. You are not bringing everything yourself or working in a converted space.</p></div>
     <div class="model-card"><h3>Built-in client referrals</h3><p>Families visiting for play are already engaged with their child's development. Many are actively looking for therapy support.</p></div>
@@ -195,10 +219,10 @@
   <p>We are building a network of practitioners across occupational therapy, speech and language therapy, play therapy, behavioural therapy, and child psychology. If you are a qualified, registered practitioner working with neurodivergent children in Nairobi, we would like to hear from you.</p>
   <p>We are in contact with <strong>KAOT</strong> (Kenya Association of Occupational Therapists) and <strong>SLHAK</strong> (Speech and Language Hearing Association of Kenya) and welcome practitioners from both associations.</p>
   <div class="t-h2">Our longer-term vision</div>
-  <p>We are building toward a model where Neuronest's play revenue helps cross-subsidise therapy access for families who cannot afford current market rates. Practitioners who are part of the Neuronest network will be central to that. We are not just offering a room to rent. We are building something together.</p>
+  <p>We are building toward a model where NeuroNest's play revenue helps cross-subsidise therapy access for families who cannot afford current market rates. Practitioners who are part of the NeuroNest network will be central to that. We are not just offering a room to rent. We are building something together.</p>
 </div>
 <div class="contact-band">
-  <h2>Interested in working from Neuronest?</h2>
+  <h2>Interested in working from NeuroNest?</h2>
   <p>Read through the information above, then get in touch. We are happy to show you the space and talk through how the arrangement would work for your practice.</p>
   <div class="contact-btns">
     <a href="https://wa.me/254768199515" target="_blank" class="btn-wh">WhatsApp Us</a>
@@ -206,7 +230,7 @@
   </div>
 </div>
 <footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
       <li><a href="open-play.html">Open Play</a></li>
@@ -216,8 +240,51 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
   </ul>
-  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
 </footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
 </body>
 </html>

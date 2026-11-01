@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Privacy Policy | NeuroNest</title>
+  <meta name="description" content="How NeuroNest collects, uses and protects your personal data, in line with Kenya's Data Protection Act 2019." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.neuronestltd.com/privacy-policy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:    #00A896;
+      --teal-dk: #008F7E;
+      --coral:   #E8603A;
+      --navy:    #1A2E4A;
+      --mid:     #4A5A6A;
+      --light:   #8A9AB0;
+      --white:   #FFFFFF;
+      --offwhite:#F5F9F8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
+
+    .top-bar { background: var(--navy); padding: 0.5rem 5vw; display: flex; justify-content: flex-end; }
+    .top-bar p { font-size: 0.78rem; color: rgba(255,255,255,0.9); }
+    .top-bar a { color: white; font-weight: 600; text-decoration: none; }
+
+    .site-header { background: var(--teal); padding: 0.7rem 5vw; display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; }
+    .header-logo { background: white; border-radius: 14px; padding: 0.45rem 0.9rem; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .header-logo img { height: 70px; display: block; }
+    .header-right { }
+    .header-tagline { font-family: 'Nunito', sans-serif; font-size: clamp(1.2rem,2.2vw,1.7rem); font-weight: 900; font-style: italic; color: white; margin-bottom: 0.8rem; line-height: 1.2; }
+
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+    .nav-pills a { display: block; text-decoration: none; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.45rem 1.1rem; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); background: transparent; transition: background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-pills a:hover { background: rgba(255,255,255,0.2); border-color: white; }
+    .nav-pills a.active { background: var(--coral); border-color: var(--coral); }
+    .nav-drop { position: relative; display: inline-block; }
+    .nav-drop > a::after { content: ' \25BE'; font-size: 0.7rem; margin-left: 0.2rem; }
+    .drop-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--navy); border-radius: 14px; padding: 0.8rem 0.4rem 0.4rem; min-width: 170px; z-index: 50; box-shadow: 0 12px 32px rgba(26,46,74,0.25); }
+    .nav-drop:hover .drop-menu { display: block; }
+    .nav-drop::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 0.5rem; }
+    .drop-menu a { display: block; padding: 0.55rem 1rem; border-radius: 8px; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; white-space: nowrap; border: none; }
+    .drop-menu a:hover { background: var(--teal); }
+
+    .page-hero {
+      background: var(--navy);
+      padding: 4rem 6vw 3.5rem;
+      text-align: center;
+    }
+    .pg-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); font-weight: 600; margin-bottom: 0.8rem; display: block; }
+    .page-hero h1 { font-family: 'Nunito', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 900; color: white; line-height: 1.2; margin-bottom: 0.8rem; }
+    .page-hero p { font-size: 0.92rem; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
+
+    .policy-body { max-width: 760px; margin: 0 auto; padding: 4rem 6vw 5rem; }
+    .policy-body h2 { font-family: 'Nunito', sans-serif; font-size: 1.25rem; font-weight: 900; color: var(--navy); margin: 2.5rem 0 0.8rem; }
+    .policy-body h2:first-child { margin-top: 0; }
+    .policy-body p { font-size: 0.92rem; color: var(--mid); line-height: 1.85; margin-bottom: 0.9rem; font-weight: 300; }
+    .policy-body ul { margin: 0.5rem 0 0.9rem 1.4rem; }
+    .policy-body ul li { font-size: 0.92rem; color: var(--mid); line-height: 1.75; margin-bottom: 0.4rem; font-weight: 300; }
+    .policy-body a { color: var(--teal); font-weight: 500; }
+    .policy-body .updated { font-size: 0.78rem; color: var(--light); margin-bottom: 2.5rem; }
+    .policy-body .contact-box { background: var(--offwhite); border-radius: 16px; padding: 1.5rem 1.8rem; margin-top: 1rem; }
+    .policy-body .contact-box p { margin: 0; font-size: 0.9rem; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .f-logo { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; text-decoration: none; }
+    .f-logo span { color: white; }
+    .f-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .f-links a:hover { color: white; }
+    .f-copy { font-size: 0.78rem; }
+
+    @media (max-width: 960px) {
+      .site-header { grid-template-columns: 1fr; }
+      .header-logo img { height: 65px; }
+    }
+    @media (max-width: 600px) {
+      .nav-pills { justify-content: center; }
+      .top-bar { justify-content: center; }
+    }
+  </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
+</head>
+<body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
+<div class="top-bar">
+  <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
+</div>
+<div class="site-header">
+  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="NeuroNest" /></a></div>
+  <div class="header-right">
+    <div class="header-tagline">Embracing Every Mind!</div>
+    <ul class="nav-pills">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
+      <li class="nav-drop"><a href="space.html">The Space &amp; Gallery</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a></div></li>
+      <li><a href="therapists.html">For Therapists</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#find-us">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="page-hero">
+  <span class="pg-eyebrow">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p>How NeuroNest collects, uses, and protects your personal information, in line with Kenya's Data Protection Act 2019.</p>
+</div>
+
+<div class="policy-body">
+  <p class="updated">Last updated: November 2026</p>
+
+  <h2>Who we are</h2>
+  <p>NeuroNest Limited ("NeuroNest", "we", "us") operates an inclusive indoor sensory play and therapy space at Kenrail Towers, M3 Southern Wing, Westlands, Nairobi, Kenya. We are registered under the Companies Act of Kenya.</p>
+  <p>We take the protection of personal data seriously and handle it in line with Kenya's Data Protection Act 2019.</p>
+
+  <h2>What data we collect</h2>
+  <p>When you interact with NeuroNest, we may collect the following:</p>
+  <ul>
+    <li>Your name and contact details (phone number and email address) when you contact us via WhatsApp, email, or an enquiry form</li>
+    <li>Your child's name and basic profile information when completing a waiver or registration form at our premises</li>
+    <li>Payment records (transaction reference and amount) when you pay for a session or programme</li>
+    <li>Photos or videos of your child if you have signed a media release form consenting to this</li>
+    <li>Basic usage data from this website (pages visited, browser type) via cookies</li>
+  </ul>
+  <p>We do not collect sensitive personal data such as medical diagnoses or therapy assessments through this website.</p>
+
+  <h2>How we use your data</h2>
+  <p>We use the data we collect to:</p>
+  <ul>
+    <li>Respond to enquiries and provide the services you have requested</li>
+    <li>Manage bookings for programmes and therapy sessions</li>
+    <li>Keep records as required for the safe operation of a children's play and therapy facility</li>
+    <li>Send you updates about upcoming events or programmes, where you have opted in</li>
+    <li>Improve our website and services</li>
+  </ul>
+  <p>We do not sell, rent or share your personal data with third parties for marketing purposes.</p>
+
+  <h2>Cookies and third-party services</h2>
+  <p>This website uses cookies to remember your preferences (such as whether you have accepted this notice). No advertising or tracking cookies are used.</p>
+  <p>This website also loads the following third-party services, which may set their own cookies or collect data under their own privacy policies:</p>
+  <ul>
+    <li><strong>Google Fonts</strong> - used to display our site fonts. Google may log your IP address when fonts are loaded.</li>
+    <li><strong>Google Maps</strong> - embedded on our Contact page to show our location. Google's privacy policy applies to map interactions.</li>
+  </ul>
+  <p>If you choose to decline cookies, this website will still function fully. Only the preference cookie is affected.</p>
+
+  <h2>How long we keep your data</h2>
+  <p>Contact enquiry records are kept for up to 12 months. Visitor and session records held at our premises are kept for as long as required by applicable law and our safeguarding obligations. Payment transaction records are kept for seven years in line with standard accounting requirements.</p>
+
+  <h2>Your rights</h2>
+  <p>Under Kenya's Data Protection Act 2019, you have the right to:</p>
+  <ul>
+    <li>Know what personal data we hold about you</li>
+    <li>Request a correction if your data is inaccurate</li>
+    <li>Request that we delete your data, subject to any legal obligations we may have to retain it</li>
+    <li>Withdraw consent for processing where consent was the basis for processing</li>
+    <li>Lodge a complaint with the Office of the Data Protection Commissioner (ODPC) if you believe your rights have been violated</li>
+  </ul>
+
+  <h2>Children's data</h2>
+  <p>NeuroNest serves children. We collect only the minimum information necessary to provide a safe and effective service. Children's data is never used for any purpose beyond the direct provision of our services. Photos or videos of children are only taken and used where a parent or guardian has signed a media release form giving explicit consent.</p>
+
+  <h2>Contact us about your data</h2>
+  <div class="contact-box">
+    <p>To exercise any of your rights, or if you have any questions about how we handle your personal data, contact us at:<br><br>
+    <strong>NeuroNest Limited</strong><br>
+    Kenrail Towers, M3 Southern Wing, Westlands, Nairobi<br>
+    Email: <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a><br>
+    Phone / WhatsApp: +254 768 199 515</p>
+  </div>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy from time to time. The date at the top of this page shows when it was last revised. Continued use of our website or services after a change constitutes acceptance of the updated policy.</p>
+</div>
+
+<footer>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
+  <ul class="f-links">
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="open-play.html">Open Play</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="space.html">The Space</a></li>
+    <li><a href="therapists.html">For Therapists</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+  </ul>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
+</body>
+</html>

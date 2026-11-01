@@ -6,11 +6,11 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Open Play | Neuronest | Sensory Play Nairobi for Autistic Children</title>
-  <meta name="description" content="Open Play at Neuronest in Westlands, Nairobi. No appointment needed. A sensory-friendly inclusive space for neurodivergent children. KES 1,000 weekdays." />
+  <title>Open Play | NeuroNest | Sensory Play Nairobi for Autistic Children</title>
+  <meta name="description" content="Open Play at NeuroNest in Westlands, Nairobi. No appointment needed. A sensory-friendly inclusive space for neurodivergent children. KES 1,000 weekdays." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.neuronestltd.com/open-play.html" />
-  <meta property="og:title" content="Open Play | Neuronest | Sensory Play Nairobi for Autistic Children" />
+  <meta property="og:title" content="Open Play | NeuroNest | Sensory Play Nairobi for Autistic Children" />
   <meta property="og:image" content="https://www.neuronestltd.com/main_play_2.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -143,16 +143,44 @@
     .rule-note { display: block; margin-top: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--teal); }
     .close-banner { background: linear-gradient(135deg, var(--navy) 0%, #24405F 100%); border-radius: 24px; padding: 3rem; text-align: center; }
     .close-banner p { font-family: 'Nunito', sans-serif; font-size: clamp(1rem,2vw,1.25rem); font-weight: 800; color: white; line-height: 1.55; margin-bottom: 1.5rem; }
-    @media (max-width: 900px) { .rules-grid { grid-template-columns: 1fr; } .pricing-strip { grid-template-columns: 1fr; } }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3.5rem; }
+    .visit-item { background: white; border-radius: 14px; padding: 1.4rem; box-shadow: 0 2px 12px rgba(26,46,74,0.05); border-top: 3px solid var(--teal); }
+    .visit-item:nth-child(even) { border-top-color: var(--coral); }
+    .visit-q { font-family: 'Nunito', sans-serif; font-size: 0.93rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
+    .visit-a { font-size: 0.83rem; line-height: 1.65; color: var(--mid); }
+    @media (max-width: 900px) { .rules-grid { grid-template-columns: 1fr; } .pricing-strip { grid-template-columns: 1fr; } .visit-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .content { padding: 3.5rem 5vw; } .rules-intro, .close-banner { padding: 2rem; } }
   </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
 <div class="top-bar">
   <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
 </div>
 <div class="site-header">
-  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="Neuronest" /></a></div>
+  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="NeuroNest" /></a></div>
   <div class="header-right">
     <div class="header-tagline">Embracing Every Mind!</div>
     <ul class="nav-pills">
@@ -163,12 +191,13 @@
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="index.html#find-us">Contact</a></li>
     </ul>
   </div>
 </div>
 <div class="page-hero">
-  <img src="main_play_2.jpeg" alt="Children playing at Neuronest" />
+  <img src="main_play_2.jpeg" alt="Children playing at NeuroNest" />
   <div class="page-hero-ov">
     <div class="pg-eyebrow">Open Play</div>
     <h1>Bring your child. Let them explore.</h1>
@@ -177,13 +206,13 @@
 </div>
 <div class="content">
   <div class="intro-block">
-    <h2>Open Play at Neuronest</h2>
-    <p>Bring your little ones to explore, move, and play in a safe and inclusive environment designed to meet every child's sensory needs. No commitment required, just freedom, fun, and the right environment for your child to thrive.</p>
-    <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Book via WhatsApp</a>
+    <h2>Open Play at NeuroNest</h2>
+    <p>Open to children aged 2 to 12. Bring your little ones to explore, move, and play in a safe and inclusive environment designed to meet every child's sensory needs. No commitment required. Just a space that works for your child.</p>
+    <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">WhatsApp Us</a>
   </div>
   <div class="block-title">Session Pricing</div>
   <div class="pricing-strip">
-    <div class="price-box"><h3>Weekdays</h3><div class="amount">KES 1,000</div><div class="sub">per child &nbsp; 3 hour session</div></div>
+    <div class="price-box"><h3>Weekdays</h3><div class="amount">KES 1,000</div><div class="sub">per child &nbsp; 5 hour session</div></div>
     <div class="price-box"><h3>Weekends</h3><div class="amount">KES 1,500</div><div class="sub">per child &nbsp; 3 hour session</div></div>
   </div>
   <div class="info-note">We accept M-PESA, bank transfer and card payments. Accompanying adults enter free. No cash policy. Grip socks are required for entry and are available for purchase at the front desk.</div>
@@ -194,12 +223,12 @@
     <li>All bags and shoes must be placed in the cubbies at the front desk before entering the play area.</li>
     <li>Food, drinks, and gum are not permitted inside the playground. Please use the designated eating area.</li>
     <li>Please remove any sharp objects and accessories before entering the play space.</li>
-    <li>Bullying, inappropriate language, and disruptive behaviour will not be tolerated at Neuronest.</li>
+    <li>Bullying, inappropriate language, and disruptive behaviour will not be tolerated at NeuroNest.</li>
     <li>A signed waiver is required before your first visit. Our team will walk you through this at the front desk.</li>
   </ul>
   <div class="rules-intro">
-    <h2>Neuronest Play Rules</h2>
-    <p>Where play meets respect and every child feels safe. Thank you for helping us keep the space fun, clean, and welcoming for every family.</p>
+    <h2>NeuroNest Play Rules</h2>
+    <p>Please read these rules before your child enters the play area. They keep the space safe and working well for everyone.</p>
   </div>
   <div class="rules-grid">
     <div class="rule-card"><span class="rule-num">01</span><h3>Shoes Off, Socks On</h3><p>Place all shoes in the designated area at the front. Grip socks keep the space clean and safe, bring your own or purchase a pair from us.</p><span class="rule-note">Socks are required for entry.</span></div>
@@ -209,17 +238,28 @@
     <div class="rule-card"><span class="rule-num">05</span><h3>Equipment Stays Together</h3><p>All toys and equipment are built for hands-on fun. Keep pieces together, and if anything feels loose, let our team know straight away.</p></div>
     <div class="rule-card"><span class="rule-num">06</span><h3>Swings, Ninja Warrior Swing and Climbing</h3><p>Hold on with both hands, take turns, and move with awareness. One rider at a time. Our team is always nearby to support safe play.</p></div>
     <div class="rule-card"><span class="rule-num">07</span><h3>Care for the Space</h3><p>Please tidy up after your session, let staff know about spills, and help us keep the environment fresh for every family who comes after you.</p></div>
-    <div class="rule-card"><span class="rule-num">08</span><h3>Everyone Belongs Here</h3><p>We celebrate children of all abilities, learning styles, and personalities. Kindness and open hearts make Neuronest a place where every child feels valued.</p><span class="rule-note">Play kindly. Laugh loudly. Explore safely.</span></div>
+    <div class="rule-card"><span class="rule-num">08</span><h3>Everyone Belongs Here</h3><p>We celebrate children of all abilities, learning styles, and personalities. Kindness and open hearts make NeuroNest a place where every child feels valued.</p><span class="rule-note">Play kindly. Laugh loudly. Explore safely.</span></div>
   </div>
   <div class="block-title">Photography and Videography</div>
-  <div class="info-note" style="margin-bottom:3.5rem;">To protect the privacy of all children at Neuronest, photography and videography requires consent, even when photographing your own child. Please ask permission from any parent or guardian before taking photos or videos that may include other children. If you would like to photograph or record your child, please be mindful of others in the space and avoid capturing other children without consent. Neuronest may photograph or record activities for use on our website and social media. If you prefer your child not to be included, please let us know at the front desk on arrival.</div>
+  <div class="info-note" style="margin-bottom:3.5rem;">To protect the privacy of all children at NeuroNest, photography and videography requires consent, even when photographing your own child. Please ask permission from any parent or guardian before taking photos or videos that may include other children. If you would like to photograph or record your child, please be mindful of others in the space and avoid capturing other children without consent. NeuroNest may photograph or record activities for use on our website and social media. We will always ask for your consent before photographing or recording your child.</div>
+  <div class="block-title">Before You Visit</div>
+  <div class="visit-grid">
+    <div class="visit-item"><div class="visit-q">Do I need to book in advance?</div><div class="visit-a">No. Walk-ins are always welcome during opening hours. Just arrive, sign the waiver at the front desk on your first visit, and you are in.</div></div>
+    <div class="visit-item"><div class="visit-q">Can I stay with my child?</div><div class="visit-a">Yes. You are welcome to stay on the floor with your child at any time. We also have a parent waiting area if you prefer to step back.</div></div>
+    <div class="visit-item"><div class="visit-q">What should my child bring?</div><div class="visit-a">Socks and a water bottle. Grip socks are required inside the play area. You can bring your own or purchase a pair from us at the front desk.</div></div>
+    <div class="visit-item"><div class="visit-q">Can we bring food?</div><div class="visit-a">Yes. You are welcome to bring your own food and eat in the reception or break area. Food is not permitted inside the play space. There are also hotels nearby where you can order food.</div></div>
+    <div class="visit-item"><div class="visit-q">How do I pay?</div><div class="visit-a">We accept M-PESA, bank transfer and card. We do not accept cash. Accompanying adults enter free.</div></div>
+    <div class="visit-item"><div class="visit-q">Is there parking?</div><div class="visit-a">Yes. Parking is available at Kenrail Towers. We are on the M3 Southern Wing, Westlands, Nairobi.</div></div>
+    <div class="visit-item"><div class="visit-q">Are there toilets and baby changing on site?</div><div class="visit-a">Yes. We have toilets suitable for children and baby changing facilities on site.</div></div>
+    <div class="visit-item"><div class="visit-q">Is this only for neurodivergent children?</div><div class="visit-a">No. NeuroNest is designed with neurodivergent children in mind but siblings and neurotypical friends are just as welcome.</div></div>
+  </div>
   <div class="close-banner">
-    <p>Thank you for helping make Neuronest a warm, inclusive, and joyful place for every child and every family.</p>
-    <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">Plan Your Visit</a>
+    <p>Thank you for following these rules. They make the difference for the children who need this space to work.</p>
+    <a href="https://wa.me/254768199515" target="_blank" class="btn-coral">WhatsApp Us</a>
   </div>
 </div>
 <footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
     <li><a href="open-play.html">Open Play</a></li>
@@ -229,8 +269,51 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
   </ul>
-  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
 </footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
 </body>
 </html>

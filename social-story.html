@@ -6,11 +6,11 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Social Story | My Visit to Neuronest | For Neurodivergent Children</title>
-  <meta name="description" content="A printable social story to help neurodivergent children prepare for their first visit to Neuronest. Read together before you come." />
+  <title>Social Story | My Visit to NeuroNest | For Neurodivergent Children</title>
+  <meta name="description" content="A printable social story to help neurodivergent children prepare for their first visit to NeuroNest. Read together before you come." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.neuronestltd.com/social-story.html" />
-  <meta property="og:title" content="Social Story | My Visit to Neuronest | For Neurodivergent Children" />
+  <meta property="og:title" content="Social Story | My Visit to NeuroNest | For Neurodivergent Children" />
   <meta property="og:image" content="https://www.neuronestltd.com/entrance_new.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -152,13 +152,36 @@
     }
     @media (max-width: 600px) { .story-text { padding: 1rem 1.2rem 1.5rem; } }
   </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
 <div class="top-bar">
   <p>Kenrail Towers, M3 Southern Wing, Westlands, Nairobi &nbsp;|&nbsp; Mon to Sun 9AM to 7PM &nbsp;|&nbsp; <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a> &nbsp;|&nbsp; +254 768 199 515</p>
 </div>
 <div class="site-header">
-  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="Neuronest" /></a></div>
+  <div class="header-logo"><a href="index.html"><img src="logo.png" alt="NeuroNest" /></a></div>
   <div class="header-right">
     <div class="header-tagline">Embracing Every Mind!</div>
     <ul class="nav-pills">
@@ -169,13 +192,14 @@
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html" class="active">Social Story</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="index.html#find-us">Contact</a></li>
     </ul>
   </div>
 </div>
 <div class="story-intro">
-  <h1>My Visit to Neuronest</h1>
-  <p>A social story to help your child know what to expect when they visit Neuronest for the first time. Read it together before you come, as many times as they need.</p>
+  <h1>My Visit to NeuroNest</h1>
+  <p>A social story to help your child know what to expect when they visit NeuroNest for the first time. Read it together before you come, as many times as they need.</p>
   <button class="print-btn" onclick="window.print()">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
     Print this story
@@ -185,69 +209,69 @@
 <div class="story-wrap">
   <div class="story-cover">
     <div class="cover-label">Social Story</div>
-    <img src="entrance_new.jpeg" alt="Neuronest entrance" />
-    <h2>My Visit to Neuronest</h2>
-    <p>A story about what will happen when I go to Neuronest for the first time.</p>
+    <img src="entrance_new.jpeg" alt="NeuroNest entrance" />
+    <h2>My Visit to NeuroNest</h2>
+    <p>A story about what will happen when I go to NeuroNest for the first time.</p>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 1</div>
-    <img src="entrance_new.jpeg" alt="Neuronest from outside" />
-    <div class="story-text"><p>Today I am going to a place called Neuronest.</p><p>I will go there with someone I know.</p></div>
+    <img src="entrance_new.jpeg" alt="NeuroNest from outside" />
+    <div class="story-text"><p>Today I am going to a place called NeuroNest.</p><p>I will go there with someone I know.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 2</div>
-    <img src="entrance_new.jpeg" alt="The front door of Neuronest" />
+    <img src="entrance_new.jpeg" alt="The front door of NeuroNest" />
     <div class="story-text"><p>When I arrive, I will see the front door.</p><p>I can walk in when I am ready.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 3</div>
-    <img src="reception_wide.jpeg" alt="The reception at Neuronest" />
-    <div class="story-text"><p>Someone at Neuronest will say hello to me.</p><p>They are kind. It is okay if I do not want to talk right away.</p></div>
+    <img src="reception_wide.jpeg" alt="The reception at NeuroNest" />
+    <div class="story-text"><p>Someone at NeuroNest will say hello to me.</p><p>They are kind. It is okay if I do not want to talk right away.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 4</div>
-    <img src="main_play.jpeg" alt="The big play room at Neuronest" />
+    <img src="main_play.jpeg" alt="The big play room at NeuroNest" />
     <div class="story-text"><p>I will see a big room with lots of things to do.</p><p>I can look around first before I start playing.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 5</div>
-    <img src="main_play_2.jpeg" alt="Swings and climbing at Neuronest" />
+    <img src="main_play_2.jpeg" alt="Swings and climbing at NeuroNest" />
     <div class="story-text"><p>There are things to climb, swing, and jump on.</p><p>I can play with them if I want to.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 6</div>
-    <img src="craft_table.jpeg" alt="Quiet activities at Neuronest" />
+    <img src="craft_table.jpeg" alt="Quiet activities at NeuroNest" />
     <div class="story-text"><p>There are also quiet things to do, like puzzles and art.</p><p>I can choose what I feel like doing.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 7</div>
-    <img src="quiet_room.jpeg" alt="The calm room at Neuronest" />
+    <img src="quiet_room.jpeg" alt="The calm room at NeuroNest" />
     <div class="story-text"><p>If I feel overwhelmed, there is a special calm room I can go to.</p><p>It has soft lights and a cosy seat. It is a safe place to rest.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 8</div>
-    <img src="children_craft_play.jpeg" alt="Children playing at Neuronest" />
-    <div class="story-text"><p>There might be other children at Neuronest.</p><p>I do not have to play with them. I can play on my own if I want.</p></div>
+    <img src="children_craft_play.jpeg" alt="Children playing at NeuroNest" />
+    <div class="story-text"><p>There might be other children at NeuroNest.</p><p>I do not have to play with them. I can play on my own if I want.</p></div>
   </div>
 
   <div class="story-page">
     <div class="story-page-num">Page 9</div>
-    <img src="entrance_new.jpeg" alt="Leaving Neuronest" />
+    <img src="entrance_new.jpeg" alt="Leaving NeuroNest" />
     <div class="story-text"><p>When it is time to go, the grown-up with me will let me know.</p><p>We will leave together and go home.</p></div>
   </div>
 
   <div class="story-end">
     <div class="end-label">The End</div>
-    <img src="neuronest_wall_sign.jpeg" alt="Neuronest sign" />
-    <p>I did it. I visited Neuronest.</p>
+    <img src="neuronest_wall_sign.jpeg" alt="NeuroNest sign" />
+    <p>I did it. I visited NeuroNest.</p>
     <p>I can come back again.</p>
   </div>
 
@@ -260,7 +284,7 @@
   </div>
 </div>
 <footer>
-  <a href="index.html" class="f-logo">Neuro<span>nest</span></a>
+  <a href="index.html" class="f-logo">Neuro<span>Nest</span></a>
   <ul class="f-links">
     <li><a href="about.html">Our Story</a></li>
       <li><a href="open-play.html">Open Play</a></li>
@@ -271,8 +295,51 @@
     <li><a href="events.html">Events</a></li>
       <li><a href="events.html">Events</a></li>
     <li><a href="social-story.html">Social Story</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
   </ul>
-  <div class="f-copy">2026 Neuronest Limited. All rights reserved.</div>
+  <div class="f-copy">2026 NeuroNest Limited. All rights reserved.</div>
 </footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+    <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+      <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+      <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    var c = localStorage.getItem('nn_cookie_consent');
+    if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+  } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+})();
+function nnCookieChoice(choice) {
+  try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
 </body>
 </html>

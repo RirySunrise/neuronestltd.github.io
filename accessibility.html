@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Accessibility Statement | NeuroNest</title>
+  <meta name="description" content="NeuroNest's commitment to making our website usable for everyone, including people with disabilities." />
+  <link rel="canonical" href="https://www.neuronestltd.com/accessibility.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --teal:    #00A896;
+      --coral:   #E8603A;
+      --navy:    #1A2E4A;
+      --offwhite:#F5F9F8;
+      --sun:     #F4C430;
+      --sun-bg:  #FEF8E1;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      background: var(--offwhite);
+      color: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid var(--offwhite);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--teal); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--teal); }
+
+    /* ── PAGE CONTENT ── */
+    .policy-wrap {
+      flex: 1;
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 5vw 4rem;
+    }
+
+    .policy-wrap h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .policy-meta {
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-bottom: 2.5rem;
+    }
+
+    .policy-wrap h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin: 2rem 0 0.6rem;
+    }
+
+    .policy-wrap p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 1rem;
+    }
+
+    .policy-wrap ul {
+      margin: 0.5rem 0 1rem 1.2rem;
+    }
+
+    .policy-wrap ul li {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 0.3rem;
+    }
+
+    .policy-wrap a {
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .policy-wrap a:hover { text-decoration: underline; }
+
+    address {
+      font-style: normal;
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
+      padding: 2.5rem 5vw 1.5rem;
+    }
+
+    .f-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .f-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .f-brand strong {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .f-brand strong span { color: var(--teal); }
+
+    .f-brand p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      margin-top: 0.4rem;
+      max-width: 240px;
+    }
+
+    .f-links h4 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .f-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .f-links ul a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .f-links ul a:hover { color: var(--teal); }
+
+    .f-copy {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      font-size: 0.78rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .f-top { flex-direction: column; }
+    }
+  </style>
+
+  <!-- Accessibility Tools -->
+  <style>
+    @font-face { font-family:'OpenDyslexic'; src:url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff2') format('woff2'); font-display:swap; }
+    #a11y-bar { background:#1A2E4A; padding:0.35rem 5vw; display:flex; align-items:center; justify-content:flex-end; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .a11y-label { color:rgba(255,255,255,0.4); font-family:'Poppins',sans-serif; font-size:0.7rem; margin-right:0.25rem; }
+    #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
+    #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
+    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
+    html.a11y-large { font-size:112%; }
+    html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
+  </style>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
+</head>
+<body>
+  <!-- Accessibility Bar -->
+  <div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+    <span class="a11y-label">Accessibility</span>
+    <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
+    <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
+    <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+  </div>
+
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <a href="index.html">Neuro<span>Nest</span></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="open-play.html">Open Play</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="space.html">The Space</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="policy-wrap">
+    <h1>Accessibility Statement</h1>
+    <p class="policy-meta">Last updated: November 2026</p>
+
+    <p>NeuroNest Limited is a space built for neurodivergent children and their families. We want our website to be as usable as possible for everyone, including people with disabilities. This page explains what we have done, what we know still needs work, and how to reach us if you run into a problem.</p>
+
+    <h2>What we have done</h2>
+    <p>We have tried to build this website in a way that works for a wide range of people and devices. Specifically:</p>
+    <ul>
+      <li>All pages use a clear heading structure so screen readers and keyboard users can navigate easily.</li>
+      <li>All images have descriptive alt text.</li>
+      <li>Colour contrast across the site is designed to meet WCAG 2.1 AA standards for text readability.</li>
+      <li>The site works on all screen sizes, including phones and tablets.</li>
+      <li>Links are clearly labelled and describe where they go.</li>
+      <li>Forms and interactive elements can be used with a keyboard alone.</li>
+      <li>The Social Story page uses plain language and a simple layout designed to be read with children who have communication differences.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <p>We are a small organisation and we do not have a full accessibility audit in place yet. Some things we are aware of:</p>
+    <ul>
+      <li>The Google Maps embed on our contact section is provided by Google and may not be fully accessible to all screen reader users. We include our full address in text on every page as an alternative.</li>
+      <li>Some of our gallery images are decorative and may have limited description for screen reader users.</li>
+      <li>Our site does not currently offer a text resize control or a high contrast toggle, though these can be set at the browser or operating system level.</li>
+    </ul>
+
+    <h2>What to do if you have a problem</h2>
+    <p>If you find any part of this website difficult to use, please tell us. We will do our best to provide the information you need in a different format or to fix the problem.</p>
+    <address>
+      Email: <a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a><br>
+      WhatsApp: <a href="https://wa.me/254768199515">+254 768 199 515</a>
+    </address>
+
+    <h2>Technical information</h2>
+    <p>This website is built in standard HTML and CSS with no third-party frameworks. It is hosted on GitHub Pages at <a href="https://www.neuronestltd.com">www.neuronestltd.com</a>. We aim to meet WCAG 2.1 Level AA where possible.</p>
+
+    <h2>How we tested this site</h2>
+    <p>We have reviewed the site manually and tested it across different browsers and screen sizes. We have not commissioned a formal third-party accessibility audit. We intend to do a more thorough review as the site grows.</p>
+
+    <h2>Updates to this statement</h2>
+    <p>We will update this page when we make significant changes to the site or when new accessibility issues are identified and addressed.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-inner">
+      <div class="f-top">
+        <div class="f-brand">
+          <strong>Neuro<span>Nest</span></strong>
+          <p>Kenya's first inclusive indoor sensory play and therapy space. Kenrail Towers, M3 Southern Wing, Westlands, Nairobi.</p>
+        </div>
+        <div class="f-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="open-play.html">Open Play</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="space.html">The Space</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="therapists.html">For Therapists</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="social-story.html">Social Story</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="f-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+254768199515">+254 768 199 515</a></li>
+            <li><a href="mailto:info@neuronestltd.com">info@neuronestltd.com</a></li>
+            <li><a href="https://www.instagram.com/neuronestltd" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/neuronestltd" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="f-copy">
+        <span>&copy; 2026 NeuroNest Limited. All rights reserved.</span>
+        <span>Nairobi, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1A2E4A; padding:1rem 5vw; box-shadow:0 -4px 24px rgba(0,0,0,0.2);">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; justify-content:space-between;">
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); line-height:1.6; margin:0; flex:1; min-width:200px;">We use cookies to remember your preferences on this site. Read our <a href="privacy-policy.html" style="color:#00A896; font-weight:600;">Privacy Policy</a> to learn more.</p>
+      <div style="display:flex; gap:0.8rem; flex-shrink:0;">
+        <button onclick="nnCookieChoice('accepted')" style="background:#E8603A; color:white; border:none; padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.85rem; cursor:pointer;">Accept</button>
+        <button onclick="nnCookieChoice('declined')" style="background:transparent; color:rgba(255,255,255,0.7); border:2px solid rgba(255,255,255,0.3); padding:0.6rem 1.5rem; border-radius:50px; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;">Decline</button>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    try {
+      var c = localStorage.getItem('nn_cookie_consent');
+      if (!c) { document.getElementById('cookie-banner').style.display = 'block'; }
+    } catch(e) { document.getElementById('cookie-banner').style.display = 'block'; }
+  })();
+  function nnCookieChoice(choice) {
+    try { localStorage.setItem('nn_cookie_consent', choice); } catch(e) {}
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  </script>
+
+  <script>
+  (function(){
+    var prefs;
+    try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+    ['dyslexic','large','contrast'].forEach(function(k){
+      var btn=document.getElementById('btn-'+k);
+      if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
+    });
+    window.a11yToggle=function(key){
+      try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
+      prefs[key]=!prefs[key];
+      try{localStorage.setItem('nn_a11y',JSON.stringify(prefs));}catch(e){}
+      document.documentElement.classList.toggle('a11y-'+key,!!prefs[key]);
+      var btn=document.getElementById('btn-'+key);
+      if(btn)btn.setAttribute('aria-pressed',prefs[key]?'true':'false');
+    };
+  })();
+  </script>
+</body>
+</html>
