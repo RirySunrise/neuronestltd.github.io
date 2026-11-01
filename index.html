@@ -108,10 +108,18 @@
     .testimonials { background: var(--navy); padding: 5rem 6vw; }
     .testimonials .sec-label { color: var(--sun); }
     .testimonials .sec-title { color: white; }
-    .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-    .t-card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 2.2rem; border: 1px solid rgba(255,255,255,0.12); }
+    .t-carousel-wrap { position: relative; margin-top: 2rem; }
+    .t-carousel { overflow: hidden; }
+    .t-track { display: flex; gap: 1.5rem; transition: transform 0.45s ease; will-change: transform; }
+    .t-card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 2.2rem; border: 1px solid rgba(255,255,255,0.12); flex: 0 0 calc(50% - 0.75rem); min-width: 280px; }
     .t-stars { color: var(--sun); font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
     .t-card p { font-size: 0.93rem; line-height: 1.8; color: rgba(255,255,255,0.8); font-weight: 300; margin-bottom: 1.2rem; }
+    .t-arrows { display: flex; gap: 0.75rem; margin-top: 1.5rem; justify-content: center; }
+    .t-arrow { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; }
+    .t-arrow:hover { background: var(--teal); border-color: var(--teal); }
+    .t-dots { display: flex; gap: 0.4rem; justify-content: center; margin-top: 1rem; }
+    .t-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); cursor: pointer; transition: background 0.2s; }
+    .t-dot.active { background: var(--teal); }
     .t-author { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--sun); text-transform: uppercase; letter-spacing: 0.05em; }
     .find-us { background: var(--offwhite); padding: 5rem 6vw; }
     .find-us-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -135,7 +143,7 @@
     .f-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .f-links a:hover { color: white; }
     .f-copy { font-size: 0.78rem; }
-    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 65px; } .services-grid { grid-template-columns: 1fr 1fr; } .find-us-inner { grid-template-columns: 1fr; gap: 3rem; } .photo-strip { height: 200px; } .t-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 960px) { .site-header { grid-template-columns: 1fr; } .header-logo img { height: 65px; } .services-grid { grid-template-columns: 1fr 1fr; } .find-us-inner { grid-template-columns: 1fr; gap: 3rem; } .photo-strip { height: 200px; } .t-card { flex: 0 0 85vw; } }
     @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } .photo-strip { grid-template-columns: 1fr; height: auto; } .photo-strip div { height: 200px; } .price-cards { flex-direction: column; align-items: center; } .nav-pills { justify-content: center; } .top-bar { justify-content: center; } }
     /* TRUST BAR */
     .trust-bar { background: var(--teal); padding: 1.1rem 5vw; }
@@ -295,15 +303,24 @@
 <div class="testimonials">
   <span class="sec-label">What Families Say</span>
   <div class="sec-title">From the people who matter most</div>
-  <div class="t-grid">
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest holds a special place in our hearts. I am so grateful for the warm, welcoming space they provide for my son to play, grow, and receive speech therapy. It means so much to see him supported, understood, and celebrated for who he is.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>What stood out for me was the quiet room, a space to regulate. Now that is genius. My kids did not want to go home.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>Previously it had been such an uphill task getting a play space for kids on the spectrum around Nairobi, but NeuroNest just made playtime easy and fun. You can leave your little ones under their care and run errands without worry. It is worth every coin.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest has become a second home for us. My daughter calls it Playschool, and demands to attend at every given opportunity. The staff are incredibly warm and really take time to understand and respond to each child's different needs.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My son genuinely enjoyed himself and kept talking about the activities even after we left. It is beautiful to see a space where children can learn, play, express themselves, and simply feel understood.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>The first ever inclusive play space I have been to. Staff are very friendly and knowledgeable about their craft and their service is top notch. Kids loved it and we have never stopped going back.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest is perfect for my daughter. She especially loves the swings and dark room which she goes to when she is overwhelmed. They also have noise cancelling headphones for sensory avoiders.</p><div class="t-author">NeuroNest Parent</div></div>
-    <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My kids love the play and the warmth that the staff have when interacting with them. It is always a hustle getting them out the door when the day is done. I would recommend giving them a try.</p><div class="t-author">NeuroNest Parent</div></div>
+  <div class="t-carousel-wrap">
+    <div class="t-carousel" id="tCarousel">
+      <div class="t-track" id="tTrack">
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest holds a special place in our hearts. I am so grateful for the warm, welcoming space they provide for my son to play, grow, and receive speech therapy. It means so much to see him supported, understood, and celebrated for who he is.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>What stood out for me was the quiet room, a space to regulate. Now that is genius. My kids did not want to go home.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>Previously it had been such an uphill task getting a play space for kids on the spectrum around Nairobi, but NeuroNest just made playtime easy and fun. You can leave your little ones under their care and run errands without worry. It is worth every coin.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest has become a second home for us. My daughter calls it Playschool, and demands to attend at every given opportunity. The staff are incredibly warm and really take time to understand and respond to each child's different needs.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My son genuinely enjoyed himself and kept talking about the activities even after we left. It is beautiful to see a space where children can learn, play, express themselves, and simply feel understood.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>The first ever inclusive play space I have been to. Staff are very friendly and knowledgeable about their craft and their service is top notch. Kids loved it and we have never stopped going back.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>NeuroNest is perfect for my daughter. She especially loves the swings and dark room which she goes to when she is overwhelmed. They also have noise cancelling headphones for sensory avoiders.</p><div class="t-author">NeuroNest Parent</div></div>
+        <div class="t-card"><div class="t-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div><p>My kids love the play and the warmth that the staff have when interacting with them. It is always a hustle getting them out the door when the day is done. I would recommend giving them a try.</p><div class="t-author">NeuroNest Parent</div></div>
+      </div>
+    </div>
+    <div class="t-arrows">
+      <button class="t-arrow" onclick="tMove(-1)" aria-label="Previous">&#8592;</button>
+      <button class="t-arrow" onclick="tMove(1)" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="t-dots" id="tDots"></div>
   </div>
 </div>
 
@@ -376,6 +393,60 @@ function nnCookieChoice(choice) {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 </script>
+  <script>
+  // Testimonials carousel
+  (function(){
+    var track = document.getElementById('tTrack');
+    var cards = track ? track.querySelectorAll('.t-card') : [];
+    var total = cards.length;
+    if (!total) return;
+    var perView = window.innerWidth < 640 ? 1 : 2;
+    var current = 0;
+    var autoTimer;
+
+    // Build dots
+    var dotsWrap = document.getElementById('tDots');
+    var steps = Math.ceil(total / perView);
+    for (var i = 0; i < steps; i++) {
+      var d = document.createElement('div');
+      d.className = 't-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('data-i', i);
+      d.onclick = (function(idx){ return function(){ goTo(idx); resetTimer(); }; })(i);
+      dotsWrap.appendChild(d);
+    }
+
+    function goTo(idx) {
+      if (idx < 0) idx = steps - 1;
+      if (idx >= steps) idx = 0;
+      current = idx;
+      var cardWidth = cards[0].offsetWidth + 24; // 24 = gap 1.5rem approx
+      track.style.transform = 'translateX(-' + (current * perView * cardWidth) + 'px)';
+      dotsWrap.querySelectorAll('.t-dot').forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    }
+
+    window.tMove = function(dir) { goTo(current + dir); resetTimer(); };
+
+    function resetTimer() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(function(){ goTo(current + 1); }, 4500);
+    }
+
+    resetTimer();
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', function(){ clearInterval(autoTimer); });
+    track.parentElement.addEventListener('mouseleave', resetTimer);
+
+    // Swipe support
+    var startX = 0;
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); resetTimer(); }
+    }, {passive:true});
+  })();
+  </script>
+
   <script>
   (function(){
     var prefs;
