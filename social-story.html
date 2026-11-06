@@ -51,6 +51,8 @@
     .nav-drop > a::after { content: ' \25BE'; font-size: 0.7rem; margin-left: 0.2rem; }
     .drop-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--navy); border-radius: 14px; padding: 0.8rem 0.4rem 0.4rem; min-width: 170px; z-index: 50; box-shadow: 0 12px 32px rgba(26,46,74,0.25); }
     .nav-drop:hover .drop-menu { display: block; }
+    .nav-drop > a[aria-expanded="true"] ~ .drop-menu { display: block; }
+    .nav-pills a:focus-visible, .drop-menu a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
     .nav-drop::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 0.5rem; }
     .drop-menu a { display: block; padding: 0.55rem 1rem; border-radius: 8px; color: white; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; white-space: nowrap; border: none; }
     .drop-menu a:hover { background: var(--teal); }
@@ -161,12 +163,15 @@
     #a11y-bar button { background:transparent; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.2); padding:0.2rem 0.65rem; border-radius:50px; font-family:'Poppins',sans-serif; font-size:0.7rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
     #a11y-bar button:hover { background:rgba(255,255,255,0.1); color:#fff; }
     #a11y-bar button[aria-pressed="true"] { background:#00A896; color:#fff; border-color:#00A896; }
-    html.a11y-dyslexic body, html.a11y-dyslexic p, html.a11y-dyslexic li, html.a11y-dyslexic div, html.a11y-dyslexic span, html.a11y-dyslexic a, html.a11y-dyslexic h1, html.a11y-dyslexic h2, html.a11y-dyslexic h3 { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.04em; word-spacing:0.12em; line-height:1.95 !important; }
-    html.a11y-large { font-size:112%; }
+    html.a11y-dyslexic body, html.a11y-dyslexic body * { font-family:'OpenDyslexic',sans-serif !important; letter-spacing:0.05em; word-spacing:0.15em; line-height:2 !important; }
+    html.a11y-tint { --white:#FEFCE8; --offwhite:#F9F5D7; --sun-bg:#F5EFCA; }
+    html.a11y-tint body { background-color:#FEFCE8; }
+    html.a11y-large { font-size:125%; }
     html.a11y-contrast { filter:invert(1) hue-rotate(180deg); }
+    @media (prefers-reduced-motion: reduce) { .t-track { transition: none !important; } }
     html.a11y-contrast img, html.a11y-contrast video, html.a11y-contrast iframe { filter:invert(1) hue-rotate(180deg); }
   </style>
-  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
+  <script>try{var _a=JSON.parse(localStorage.getItem('nn_a11y')||'{}');['dyslexic','large','contrast','tint'].forEach(function(k){if(_a[k])document.documentElement.classList.add('a11y-'+k);});}catch(e){}</script>
 </head>
 <body>
   <!-- Accessibility Bar -->
@@ -175,6 +180,7 @@
     <button id="btn-dyslexic" onclick="a11yToggle('dyslexic')" aria-pressed="false">Dyslexia Font</button>
     <button id="btn-large" onclick="a11yToggle('large')" aria-pressed="false">Larger Text</button>
     <button id="btn-contrast" onclick="a11yToggle('contrast')" aria-pressed="false">High Contrast</button>
+    <button id="btn-tint" onclick="a11yToggle('tint')" aria-pressed="false">Reading Tint</button>
   </div>
 
 <div class="top-bar">
@@ -187,8 +193,8 @@
     <ul class="nav-pills">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Our Story</a></li>
-      <li class="nav-drop"><a href="programs.html">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
-      <li class="nav-drop"><a href="space.html">The Space &amp; Gallery</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a></div></li>
+      <li class="nav-drop"><a href="programs.html" aria-haspopup="true" aria-expanded="false">Programs &amp; Open Play</a><div class="drop-menu"><a href="open-play.html">Open Play</a><a href="programs.html">Programs</a></div></li>
+      <li class="nav-drop"><a href="space.html" aria-haspopup="true" aria-expanded="false">The Space &amp; Gallery</a><div class="drop-menu"><a href="space.html">The Space</a><a href="gallery.html">Gallery</a></div></li>
       <li><a href="therapists.html">For Therapists</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="social-story.html" class="active">Social Story</a></li>
@@ -324,10 +330,51 @@ function nnCookieChoice(choice) {
 }
 </script>
   <script>
+  // Keyboard-accessible dropdown navigation
+  (function(){
+    document.querySelectorAll('.nav-drop').forEach(function(drop){
+      var trigger = drop.querySelector('a[aria-expanded]');
+      var menu = drop.querySelector('.drop-menu');
+      if(!trigger || !menu) return;
+      var items = menu.querySelectorAll('a');
+
+      function openMenu(){
+        trigger.setAttribute('aria-expanded','true');
+      }
+      function closeMenu(){
+        trigger.setAttribute('aria-expanded','false');
+      }
+
+      trigger.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '||e.key==='ArrowDown'){
+          e.preventDefault();
+          openMenu();
+          if(items.length) items[0].focus();
+        }
+      });
+
+      menu.addEventListener('keydown', function(e){
+        var focused = document.activeElement;
+        var idx = Array.from(items).indexOf(focused);
+        if(e.key==='ArrowDown'){ e.preventDefault(); if(idx<items.length-1) items[idx+1].focus(); }
+        if(e.key==='ArrowUp'){ e.preventDefault(); if(idx>0) items[idx-1].focus(); else{ closeMenu(); trigger.focus(); } }
+        if(e.key==='Escape'||e.key==='Tab'){ closeMenu(); if(e.key==='Escape'){ e.preventDefault(); trigger.focus(); } }
+      });
+
+      drop.addEventListener('focusout', function(e){
+        setTimeout(function(){
+          if(!drop.contains(document.activeElement)) closeMenu();
+        }, 50);
+      });
+    });
+  })();
+  </script>
+
+  <script>
   (function(){
     var prefs;
     try{prefs=JSON.parse(localStorage.getItem('nn_a11y')||'{}');}catch(e){prefs={};}
-    ['dyslexic','large','contrast'].forEach(function(k){
+    ['dyslexic','large','contrast','tint'].forEach(function(k){
       var btn=document.getElementById('btn-'+k);
       if(btn&&prefs[k])btn.setAttribute('aria-pressed','true');
     });
